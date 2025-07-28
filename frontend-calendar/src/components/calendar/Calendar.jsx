@@ -1,72 +1,112 @@
-/** @jsxImportSource @emotion/react */
-import styled from "@emotion/styled";
-import dayjs from "dayjs";
+import { useState } from 'react';
+import styled from '@emotion/styled';
+import FullCalendar from '@fullcalendar/react';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import esLocale from '@fullcalendar/core/locales/es';
+import CalendarToolbar from './CalendarToolbar';
+import CalendarSidebar from './CalendarSidebar';
 
-const Container = styled.div`
+const CalendarContainer = styled.div`
+  display: flex;
+  height: 100vh;
+  background: #f9fafb;
+`;
+
+const MainContent = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  overflow: hidden;
 `;
 
-const HeaderRow = styled.div`
-  display: grid;
-  grid-template-columns: 80px repeat(7, 1fr);
-  background-color: ${({ theme }) => theme.colors.light};
-  border-bottom: 1px solid #e0e0e0;
+const CalendarWrapper = styled.div`
+  flex: 1;
+  padding: 1rem;
+  background: white;
 `;
 
-const DayHeader = styled.div`
-  padding: 12px;
-  text-align: center;
-  font-weight: 600;
-  font-family: ${({ theme }) => theme.fonts.heading};
-`;
-
-const TimeGrid = styled.div`
-  display: grid;
-  grid-template-columns: 80px repeat(7, 1fr);
-  grid-template-rows: repeat(24, 60px); /* 24 horas */
-  flex-grow: 1;
-`;
-
-const TimeLabel = styled.div`
-  padding: 4px;
-  text-align: right;
-  font-size: 12px;
-  color: #888;
-  border-bottom: 1px solid #eee;
-`;
-
-const Cell = styled.div`
-  border-bottom: 1px solid #eee;
-  border-left: 1px solid #eee;
-`;
-
-const Calendar = () => {
-  const weekStart = dayjs().startOf("week").add(1, "day"); // lunes
-  const days = Array.from({ length: 7 }, (_, i) => weekStart.add(i, "day"));
-
+export default function Calendar() {
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [view, setView] = useState('week');
+  
+  const handlePrev = () => {
+    const newDate = new Date(currentDate);
+    if (view === 'day') {
+      newDate.setDate(newDate.getDate() - 1);
+    } else if (view === 'week') {
+      newDate.setDate(newDate.getDate() - 7);
+    } else {
+      newDate.setMonth(newDate.getMonth() - 1);
+    }
+    setCurrentDate(newDate);
+  };
+  
+  const handleNext = () => {
+    const newDate = new Date(currentDate);
+    if (view === 'day') {
+      newDate.setDate(newDate.getDate() + 1);
+    } else if (view === 'week') {
+      newDate.setDate(newDate.getDate() + 7);
+    } else {
+      newDate.setMonth(newDate.getMonth() + 1);
+    }
+    setCurrentDate(newDate);
+  };
+  
+  const handleToday = () => {
+    setCurrentDate(new Date());
+  };
+  
+  const handleViewChange = (newView) => {
+    setView(newView);
+  };
+  
+  const handleDateChange = (date) => {
+    setCurrentDate(date);
+  };
+  
+  const getCalendarView = () => {
+    switch(view) {
+      case 'day': return 'timeGridDay';
+      case 'week': return 'timeGridWeek';
+      case 'month': return 'dayGridMonth';
+      default: return 'timeGridWeek';
+    }
+  };
+  
   return (
-    <Container>
-      <HeaderRow>
-        <DayHeader>Hora</DayHeader>
-        {days.map((day) => (
-          <DayHeader key={day.format("YYYY-MM-DD")}>
-            {day.format("ddd DD/MM")}
-          </DayHeader>
-        ))}
-      </HeaderRow>
-
-      <TimeGrid>
-        {Array.from({ length: 24 }).map((_, hour) => (
-          <TimeLabel key={`time-${hour}`}>{`${hour}:00`}</TimeLabel>
-        ))}
-        {Array.from({ length: 24 * 7 }).map((_, i) => (
-          <Cell key={`cell-${i}`} />
-        ))}
-      </TimeGrid>
-    </Container>
+    <CalendarContainer>
+      <MainContent>
+        <CalendarToolbar
+          currentDate={currentDate}
+          onPrev={handlePrev}
+          onNext={handleNext}
+          onToday={handleToday}
+          view={view}
+          onViewChange={handleViewChange}
+        />
+        
+        <CalendarWrapper>
+          <FullCalendar
+            plugins={[timeGridPlugin, dayGridPlugin, interactionPlugin]}
+            initialView={getCalendarView()}
+            headerToolbar={false}
+            height="100%"
+            nowIndicator={true}
+            initialDate={currentDate}
+            locales={[esLocale]}
+            locale="es"
+            firstDay={1}
+          />
+        </CalendarWrapper>
+      </MainContent>
+      
+      <CalendarSidebar 
+        currentDate={currentDate} 
+        onDateChange={handleDateChange} 
+      />
+    </CalendarContainer>
   );
-};
-
-export default Calendar;
+}
