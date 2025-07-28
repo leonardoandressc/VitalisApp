@@ -20,6 +20,7 @@
     "@fullcalendar/timegrid": "^6.1.18",
     "@react-oauth/google": "^0.12.2",
     "axios": "^1.11.0",
+    "dayjs": "^1.11.13",
     "lucide-react": "^0.526.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
