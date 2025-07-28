@@ -39,6 +39,7 @@ function App() {
 
 export default App;
 */
+/*
 import AppLayout from "./components/AppLayout";
 
 function App() {
@@ -46,3 +47,7 @@ function App() {
 }
 
 export default App;
+*/
+export default function App() {
+  return <h1 style={{ color: 'red' }}>¡El frontend funciona!</h1>;
+}
