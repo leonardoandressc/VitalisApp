@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import styled from '@emotion/styled';
 import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -30,41 +30,98 @@ const CalendarWrapper = styled.div`
 export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [view, setView] = useState('week');
-  
-  const handlePrev = () => {
+  const calendarRef = useRef(null);
+
+  // Función para manejar el cambio de fecha
+  const changeDate = useCallback((amount, unit) => {
     const newDate = new Date(currentDate);
-    if (view === 'day') {
-      newDate.setDate(newDate.getDate() - 1);
-    } else if (view === 'week') {
-      newDate.setDate(newDate.getDate() - 7);
-    } else {
-      newDate.setMonth(newDate.getMonth() - 1);
+    
+    switch(unit) {
+      case 'day':
+        newDate.setDate(newDate.getDate() + amount);
+        break;
+      case 'week':
+        newDate.setDate(newDate.getDate() + (amount * 7));
+        break;
+      case 'month':
+        newDate.setMonth(newDate.getMonth() + amount);
+        break;
+      default:
+        break;
     }
+    
     setCurrentDate(newDate);
-  };
-  
-  const handleNext = () => {
-    const newDate = new Date(currentDate);
-    if (view === 'day') {
-      newDate.setDate(newDate.getDate() + 1);
-    } else if (view === 'week') {
-      newDate.setDate(newDate.getDate() + 7);
-    } else {
-      newDate.setMonth(newDate.getMonth() + 1);
+    
+    // Actualizar el calendario si existe
+    if (calendarRef.current) {
+      const calendarApi = calendarRef.current.getApi();
+      calendarApi.gotoDate(newDate);
     }
-    setCurrentDate(newDate);
-  };
-  
-  const handleToday = () => {
-    setCurrentDate(new Date());
-  };
-  
+  }, [currentDate]);
+
+  // Manejadores de navegación
+  const handlePrev = useCallback(() => {
+    changeDate(-1, view);
+  }, [view, changeDate]);
+
+  const handleNext = useCallback(() => {
+    changeDate(1, view);
+  }, [view, changeDate]);
+
+  const handleToday = useCallback(() => {
+    const today = new Date();
+    setCurrentDate(today);
+    if (calendarRef.current) {
+      calendarRef.current.getApi().today();
+    }
+  }, []);
+
+  // Efecto para manejar eventos del teclado
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      
+      switch(e.key) {
+        case 'ArrowLeft':
+          e.preventDefault();
+          handlePrev();
+          break;
+        case 'ArrowRight':
+          e.preventDefault();
+          handleNext();
+          break;
+        case 'ArrowUp':
+          if (view === 'day') {
+            e.preventDefault();
+            changeDate(-1, 'week');
+          }
+          break;
+        case 'ArrowDown':
+          if (view === 'day') {
+            e.preventDefault();
+            changeDate(1, 'week');
+          }
+          break;
+        default:
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [view, handlePrev, handleNext, changeDate]);
+
   const handleViewChange = (newView) => {
     setView(newView);
   };
   
   const handleDateChange = (date) => {
     setCurrentDate(date);
+    if (calendarRef.current) {
+      calendarRef.current.getApi().gotoDate(date);
+    }
   };
   
   const getCalendarView = () => {
@@ -90,6 +147,7 @@ export default function Calendar() {
         
         <CalendarWrapper>
           <FullCalendar
+            ref={calendarRef}
             plugins={[timeGridPlugin, dayGridPlugin, interactionPlugin]}
             initialView={getCalendarView()}
             headerToolbar={false}
@@ -99,6 +157,9 @@ export default function Calendar() {
             locales={[esLocale]}
             locale="es"
             firstDay={1}
+            datesSet={(dateInfo) => {
+              setCurrentDate(dateInfo.view.currentStart);
+            }}
           />
         </CalendarWrapper>
       </MainContent>
