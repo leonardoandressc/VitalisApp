@@ -1,8 +1,10 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+// routes/CalendarView.jsx
 import Calendar from '../components/calendar/Calendar';
 import CalendarSidebar from '../components/calendar/CalendarSidebar';
 import CalendarToolbar from '../components/calendar/CalendarToolbar';
+
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
 
 const CalendarView = () => {
   return (

@@ -3233,3 +3233,25 @@ Error: connect ENOENT /run/user/0/vscode-git-541ba02e08.sock
 remote: No anonymous write access.
 fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
 [Mon Jul 28 18:37:59 UTC 2025] Sincronizado con GitHub
+[main f65b9cf] Auto-commit: 2025-07-28 18:42:59
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 111 insertions(+)
+ create mode 100644 frontend-calendar/src/components/calendar/Calendar.jsx
+ create mode 100644 frontend-calendar/src/components/calendar/CalendarSidebar.jsx
+ create mode 100644 frontend-calendar/src/components/calendar/CalendarToolbar.jsx
+ create mode 100644 frontend-calendar/src/routes/CalendarView.jsx
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Mon Jul 28 18:43:53 UTC 2025] Sincronizado con GitHub

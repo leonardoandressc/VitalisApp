@@ -40,10 +40,19 @@ function App() {
 export default App;
 */
 
-import AppLayout from "./components/AppLayout";
+// App.jsx o main router
+import { Routes, Route } from 'react-router-dom';
+import CalendarView from './routes/CalendarView';
+import AppLayout from './components/layout/AppLayout';
+// otras rutas...
 
 function App() {
-  return <AppLayout />;
+  return (
+    <Routes>
+      <Route path="/" element={<AppLayout />}>
+        {/* Otras rutas */}
+        <Route path="/calendario" element={<CalendarView />} />
+      </Route>
+    </Routes>
+  );
 }
-
-export default App;
