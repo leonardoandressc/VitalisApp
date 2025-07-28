@@ -8,8 +8,49 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { useTheme } from '@emotion/react';
 import { useState } from 'react';
-import NavControls from './NavControls'; // Adjust the path if needed
 
+// Estilos para los componentes (usa styled de @emotion/styled)
+const NavControls = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+const TodayButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: ${({ theme }) => theme.colors.primary};
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+`;
+
+const ViewControls = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`;
+
+const ViewButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: ${({ active, theme }) => 
+    active ? theme.colors.primary : 'transparent'};
+  color: ${({ active, theme }) => 
+    active ? 'white' : theme.colors.text};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+`;
+
+const CalendarGrid = styled.div`
+  flex: 1;
+  background: ${({ theme }) => theme.colors.cardBackground};
+  border-radius: 12px;
+  overflow: hidden;
+`;
 
 const CalendarContainer = styled.div`
   display: flex;
@@ -64,12 +105,6 @@ export default function Calendar() {
             onClick={() => setCurrentView('timeGridWeek')}
           >
             <MdViewWeek /> Semana
-          </ViewButton>
-          <ViewButton 
-            active={currentView === 'dayGridMonth'}
-            onClick={() => setCurrentView('dayGridMonth')}
-          >
-            <MdViewMonth /> Mes
           </ViewButton>
         </ViewControls>
       </CalendarHeader>
