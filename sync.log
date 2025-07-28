@@ -3490,3 +3490,28 @@ After doing this, you may fix the identity used for this commit with:
 To https://github.com/leonardoandressc/VitalisApp.git
    920136f..0229371  main -> main
 [Mon Jul 28 19:54:42 UTC 2025] Sincronizado con GitHub
+[main c6c9222] Auto-commit: 2025-07-28 19:59:42
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+Missing or invalid credentials.
+Error: read ECONNRESET
+    at Pipe.onStreamRead (node:internal/stream_base_commons:216:20) {
+  errno: -104,
+  code: 'ECONNRESET',
+  syscall: 'read'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Mon Jul 28 23:12:51 UTC 2025] Sincronizado con GitHub
