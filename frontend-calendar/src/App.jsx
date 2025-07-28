@@ -49,7 +49,7 @@ function App() {
     <Routes>
       <Route path="/" element={<AppLayout />}>
         {/* Otras rutas */}
-        <Route path="/calendario" element={<CalendarView />} />
+        <Route path="/calendar" element={<CalendarView />} />
       </Route>
     </Routes>
   );
