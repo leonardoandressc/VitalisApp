@@ -1,20 +1,14 @@
 /** @jsxImportSource @emotion/react */
-import { css, keyframes } from '@emotion/react';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { MdChevronLeft, MdChevronRight, MdToday, MdViewDay, MdViewWeek, MdMoreVert } from 'react-icons/md';
+import { MdChevronLeft, MdChevronRight, MdToday, MdViewDay, MdViewWeek } from 'react-icons/md';
 import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { useTheme } from '@emotion/react';
-import { useState, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import esLocale from '@fullcalendar/core/locales/es';
 
-// Animaciones
-const fadeIn = keyframes`
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-`;
-
-// Estilos modernos estilo Apple
 const CalendarContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,18 +23,13 @@ const CalendarHeader = styled.header`
   align-items: center;
   padding: 1rem 1.5rem;
   background: rgba(${({ theme }) => theme.colors.cardBackgroundRGB}, 0.8);
-  backdrop-filter: blur(20px);
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-  position: sticky;
-  top: 0;
-  z-index: 10;
 `;
 
 const NavControls = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  animation: ${fadeIn} 0.3s ease-out;
 `;
 
 const NavButton = styled.button`
@@ -53,33 +42,28 @@ const NavButton = styled.button`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s;
   color: ${({ theme }) => theme.colors.text};
   
   &:hover {
     background: rgba(${({ theme }) => theme.colors.primaryRGB}, 0.1);
   }
-  
-  &:active {
-    transform: scale(0.95);
-  }
 `;
 
-const TodayButton = styled(NavButton)`
+const TodayButton = styled.button`
   padding: 0.5rem 1rem;
   border-radius: 20px;
   background: ${({ theme }) => theme.colors.primary};
   color: white;
   font-weight: 500;
-  width: auto;
-  
-  svg {
-    margin-right: 0.25rem;
-  }
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
 `;
 
 const DateTitle = styled.h2`
-  margin: 0;
+  margin: 0 1rem;
   font-size: 1.25rem;
   font-weight: 600;
   color: ${({ theme }) => theme.colors.text};
@@ -100,16 +84,10 @@ const ViewButton = styled.button`
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s;
   background: ${({ active, theme }) => 
     active ? theme.colors.primary : 'transparent'};
   color: ${({ active, theme }) => 
     active ? 'white' : theme.colors.text};
-  
-  &:hover {
-    background: ${({ active, theme }) => 
-      !active && `rgba(${theme.colors.primaryRGB}, 0.1)`};
-  }
   
   svg {
     margin-right: 0.25rem;
@@ -122,80 +100,64 @@ const CalendarGrid = styled.div`
   overflow: hidden;
 `;
 
-const EventDot = styled.div`
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: ${({ color }) => color};
-  margin-right: 4px;
-`;
-
 export default function AppleStyleCalendar() {
   const theme = useTheme();
+  const calendarRef = useRef(null);
   const [currentView, setCurrentView] = useState('timeGridWeek');
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [events, setEvents] = useState([
+  const [events] = useState([
     {
-      title: 'Reunión de equipo',
+      title: 'Reunión importante',
       start: new Date(new Date().setHours(10, 0, 0)),
       end: new Date(new Date().setHours(11, 30, 0)),
-      color: '#FF2D55',
-      extendedProps: {
-        description: 'Revisión del sprint actual'
-      }
+      color: '#FF2D55'
     },
     {
-      title: 'Almuerzo con cliente',
+      title: 'Almuerzo con equipo',
       start: new Date(new Date().setHours(13, 0, 0)),
-      end: new Date(new Date().setHours(14, 30, 0)),
-      color: '#5856D6',
+      end: new Date(new Date().setHours(14, 0, 0)),
+      color: '#5856D6'
     }
   ]);
 
   // Formatear fecha para el título
   const formatDateTitle = (date) => {
-    const options = { weekday: 'long', month: 'long', day: 'numeric' };
+    const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
     return date.toLocaleDateString('es-ES', options);
   };
 
+  // Actualizar el calendario cuando cambia la vista o fecha
+  useEffect(() => {
+    if (calendarRef.current) {
+      const calendarApi = calendarRef.current.getApi();
+      calendarApi.changeView(currentView);
+      calendarApi.gotoDate(currentDate);
+    }
+  }, [currentView, currentDate]);
+
   // Navegación
   const handlePrev = () => {
-    const newDate = new Date(currentDate);
-    if (currentView === 'timeGridDay') {
-      newDate.setDate(newDate.getDate() - 1);
-    } else {
-      newDate.setDate(newDate.getDate() - 7);
-    }
-    setCurrentDate(newDate);
+    const calendarApi = calendarRef.current.getApi();
+    calendarApi.prev();
+    setCurrentDate(calendarApi.getDate());
   };
 
   const handleNext = () => {
-    const newDate = new Date(currentDate);
-    if (currentView === 'timeGridDay') {
-      newDate.setDate(newDate.getDate() + 1);
-    } else {
-      newDate.setDate(newDate.getDate() + 7);
-    }
-    setCurrentDate(newDate);
+    const calendarApi = calendarRef.current.getApi();
+    calendarApi.next();
+    setCurrentDate(calendarApi.getDate());
   };
 
   const handleToday = () => {
+    const calendarApi = calendarRef.current.getApi();
+    calendarApi.today();
     setCurrentDate(new Date());
   };
 
-  // Render personalizado para eventos
-  const renderEventContent = (eventInfo) => (
-    <div css={css`
-      display: flex;
-      align-items: center;
-      padding: 2px 4px;
-      font-size: 0.8rem;
-      font-weight: 500;
-    `}>
-      <EventDot color={eventInfo.event.backgroundColor} />
-      <span>{eventInfo.event.title}</span>
-    </div>
-  );
+  // Manejar cambio de vista
+  const handleViewChange = (view) => {
+    setCurrentView(view);
+  };
 
   return (
     <CalendarContainer>
@@ -217,14 +179,14 @@ export default function AppleStyleCalendar() {
         <ViewControls>
           <ViewButton 
             active={currentView === 'timeGridDay'}
-            onClick={() => setCurrentView('timeGridDay')}
+            onClick={() => handleViewChange('timeGridDay')}
           >
             <MdViewDay size={16} />
             Día
           </ViewButton>
           <ViewButton 
             active={currentView === 'timeGridWeek'}
-            onClick={() => setCurrentView('timeGridWeek')}
+            onClick={() => handleViewChange('timeGridWeek')}
           >
             <MdViewWeek size={16} />
             Semana
@@ -234,6 +196,7 @@ export default function AppleStyleCalendar() {
 
       <CalendarGrid>
         <FullCalendar
+          ref={calendarRef}
           plugins={[timeGridPlugin, interactionPlugin]}
           initialView={currentView}
           headerToolbar={false}
@@ -241,27 +204,15 @@ export default function AppleStyleCalendar() {
           nowIndicator={true}
           initialDate={currentDate}
           events={events}
-          eventContent={renderEventContent}
           slotMinTime="08:00:00"
           slotMaxTime="20:00:00"
           allDaySlot={false}
-          dayHeaderFormat={{ weekday: 'short', day: 'numeric' }}
-          eventDisplay="block"
-          eventTimeFormat={{
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: true
-          }}
-          windowResizeDelay={0}
-          stickyHeaderDates={true}
-          eventClick={(info) => {
-            console.log('Event clicked:', info.event.title);
-          }}
-          dateClick={(info) => {
-            console.log('Date clicked:', info.dateStr);
-          }}
+          locales={[esLocale]}
           locale="es"
-          firstDay={1} // Lunes como primer día de la semana
+          firstDay={1}
+          eventClick={(info) => {
+            console.log('Evento clickeado:', info.event.title);
+          }}
         />
       </CalendarGrid>
     </CalendarContainer>
