@@ -1,150 +1,39 @@
-import { css } from '@emotion/react';
-import styled from '@emotion/styled';
-import { MdChevronLeft, MdChevronRight, MdToday, MdViewDay, MdViewWeek, MdViewMonth } from 'react-icons/md';
+// components/Calendar.jsx
+import styled from "@emotion/styled";
+import { MdChevronLeft, MdChevronRight, MdToday } from "react-icons/md";
 
 const CalendarContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   height: 100%;
-  gap: 1rem;
-  background: ${({ theme }) => theme.colors.background};
-`;
-
-/* ----- Header (Controles y Vistas) ----- */
-const CalendarHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  background: ${({ theme }) => theme.colors.cardBackground};
-  border-radius: 12px;
-`;
-
-const ViewControls = styled.div`
-  display: flex;
-  gap: 0.5rem;
-`;
-
-const ViewButton = styled.button`
-  padding: 0.5rem 1rem;
-  background: ${({ theme, active }) => 
-    active ? theme.colors.primary : 'transparent'};
-  color: ${({ theme, active }) => 
-    active ? 'white' : theme.colors.text};
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  transition: all 0.2s;
-
-  &:hover {
-    background: ${({ theme, active }) => 
-      !active && theme.colors.accent};
-  }
-`;
-
-const NavControls = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-`;
-
-const TodayButton = styled.button`
-  padding: 0.5rem 1rem;
-  background: transparent;
-  color: ${({ theme }) => theme.colors.primary};
-  border: 1px solid ${({ theme }) => theme.colors.primary};
-  border-radius: 8px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  transition: all 0.2s;
-
-  &:hover {
-    background: ${({ theme }) => theme.colors.accent};
-  }
-`;
-
-/* ----- Cuerpo del Calendario ----- */
-const CalendarGrid = styled.div`
-  flex: 1;
   background: ${({ theme }) => theme.colors.cardBackground};
   border-radius: 12px;
   padding: 1rem;
-  overflow: hidden;
-  display: grid;
-  grid-template-rows: auto 1fr;
-`;
-
-// Ejemplo de integración con FullCalendar (personalizado)
-const StyledCalendar = styled.div`
-  .fc { /* FullCalendar container */
-    height: 100%;
-    font-family: ${({ theme }) => theme.fonts.body};
-  }
-  .fc-event {
-    background: ${({ theme }) => theme.colors.primary};
-    border: none;
-    border-radius: 6px;
-  }
-  .fc-daygrid-day {
-    border-color: ${({ theme }) => theme.colors.accent};
-  }
 `;
 
 export default function Calendar() {
-  const [currentView, setCurrentView] = useState('dayGridMonth');
-
   return (
     <CalendarContainer>
-      {/* Header: Controles de navegación */}
-      <CalendarHeader>
-        <NavControls>
-          <button css={css`background: none; border: none; font-size: 1.5rem;`}>
-            <MdChevronLeft />
-          </button>
-          <h3 css={css`margin: 0 1rem;`}>Octubre 2023</h3>
-          <button css={css`background: none; border: none; font-size: 1.5rem;`}>
-            <MdChevronRight />
-          </button>
-          <TodayButton>
-            <MdToday /> Hoy
-          </TodayButton>
-        </NavControls>
+      {/* Controles del calendario */}
+      <div css={{ display: "flex", justifyContent: "space-between", marginBottom: "1rem" }}>
+        <button css={{ background: "none", border: "none", fontSize: "1.5rem" }}>
+          <MdChevronLeft />
+        </button>
+        <h3 css={{ margin: 0 }}>Octubre 2023</h3>
+        <button css={{ background: "none", border: "none", fontSize: "1.5rem" }}>
+          <MdChevronRight />
+        </button>
+      </div>
 
-        {/* Selector de vista */}
-        <ViewControls>
-          <ViewButton active={currentView === 'timeGridDay'}>
-            <MdViewDay /> Día
-          </ViewButton>
-          <ViewButton active={currentView === 'timeGridWeek'}>
-            <MdViewWeek /> Semana
-          </ViewButton>
-          <ViewButton active={currentView === 'dayGridMonth'}>
-            <MdViewMonth /> Mes
-          </ViewButton>
-        </ViewControls>
-      </CalendarHeader>
-
-      {/* Cuerpo del calendario */}
-      <CalendarGrid>
-        <StyledCalendar>
-          {/* Aquí iría FullCalendar o tu implementación personalizada */}
-          <div css={css`
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: ${({ theme }) => theme.colors.textSecondary};
-          `}>
-            Vista previa del calendario
-          </div>
-        </StyledCalendar>
-      </CalendarGrid>
+      {/* Espacio para el calendario (integra FullCalendar aquí si lo usas) */}
+      <div css={{ 
+        height: "calc(100% - 50px)", 
+        border: `1px dashed ${currentTheme.colors.accent}`,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+      }}>
+        <p>Contenido del calendario</p>
+      </div>
     </CalendarContainer>
   );
 }
