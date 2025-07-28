@@ -1,7 +1,7 @@
 // src/api/auth.js
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000"; // Ajusta si usas .env
+const API_URL = import.meta.env.VITE_API_URL;
 
 export async function registerUser({ name, email, password }) {
   try {
