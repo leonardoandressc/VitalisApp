@@ -7,6 +7,9 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { useTheme } from '@emotion/react';
+import { useState } from 'react';
+import NavControls from './NavControls'; // Adjust the path if needed
+
 
 const CalendarContainer = styled.div`
   display: flex;
