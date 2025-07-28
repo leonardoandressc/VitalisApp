@@ -23,7 +23,7 @@ export const darkTheme = {
     background: '#263238',
     cardBackground: '#2E3A40',
     text: '#FAFAF8',
-    textSecondary: '#263238',
+    textSecondary: '#B0BEC5',
     surface: '#37474F',
     accent: '#B2DFDB',
   },
