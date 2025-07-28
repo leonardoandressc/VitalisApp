@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import styled from '@emotion/styled';
 import dayjs from 'dayjs';
-import { MdChevronLeft, MdChevronRight, MdToday, MdViewDay, MdViewWeek, MdDateRange, MdAdd } from 'react-icons/md';
-// Cambiamos MdViewMonth por MdDateRange que sí existeimport { MdChevronLeft, MdChevronRight, MdToday, MdViewDay, MdViewWeek, MdDateRange, MdAdd } from 'react-icons/md';
+import { MdCalendarToday, MdPeople, MdExpandMore } from 'react-icons/md';
 
 const SidebarContainer = styled.div`
   width: 280px;

@@ -1,6 +1,7 @@
+/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { MdChevronLeft, MdChevronRight, MdToday, MdViewDay, MdViewWeek, MdViewMonth, MdAdd } from 'react-icons/md';
+import { MdChevronLeft, MdChevronRight, MdToday, MdViewDay, MdViewWeek, MdDateRange, MdAdd } from 'react-icons/md';
 import dayjs from 'dayjs';
 
 const ToolbarContainer = styled.div`
@@ -151,7 +152,7 @@ export default function CalendarToolbar({
             active={view === 'month'}
             onClick={() => onViewChange('month')}
           >
-            <MdViewMonth size={16} />
+            <MdDateRange size={16} /> {/* Cambiado a MdDateRange */}
             Mes
           </ViewButton>
         </ViewControls>
