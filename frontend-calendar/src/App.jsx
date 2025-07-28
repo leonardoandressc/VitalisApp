@@ -6,6 +6,9 @@ import { lightTheme, darkTheme } from "./theme";
 import ThemeToggle from "./components/ThemeToggle";
 import Login from "./components/Login";
 import Register from "./routes/Register"; // << nueva ruta
+import CalendarView from './routes/CalendarView';
+import AppLayout from './components/AppLayout';
+
 /*
 function App() {
   const [isDark, setIsDark] = useState(true);
@@ -40,11 +43,6 @@ function App() {
 export default App;
 */
 
-// App.jsx o main router
-import { Routes, Route } from 'react-router-dom';
-import CalendarView from './routes/CalendarView';
-import AppLayout from './components/layout/AppLayout';
-// otras rutas...
 
 function App() {
   return (
@@ -56,3 +54,5 @@ function App() {
     </Routes>
   );
 }
+
+export default App;

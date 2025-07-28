@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { useState, useEffect } from "react";
 
+
 const SidebarContainer = styled.aside`
   height: 100vh; /* Cambiado de min-height */  width: ${({ collapsed }) => (collapsed ? "80px" : "240px")};
   background-color: ${({ theme }) => theme.colors.surface};
