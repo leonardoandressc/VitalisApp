@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import styled from '@emotion/styled';
 import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -114,6 +114,21 @@ export default function Calendar() {
       default: return 'timeGridWeek';
     }
   };
+
+  const handleDateChange = useCallback((newDate) => {
+    setCurrentDate(newDate);
+    if (calendarRef.current) {
+      const api = calendarRef.current.getApi();
+      api.gotoDate(newDate);
+      if (view !== 'day') {
+        setView('day');
+      }
+    }
+  }, [view]);
+
+  const handleViewChange = useCallback((newView) => {
+    setView(newView);
+  }, []);
 
   return (
     <CalendarContainer>
