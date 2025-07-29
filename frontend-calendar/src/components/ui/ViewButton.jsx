@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 const StyledViewButton = styled.button`
   padding: 0.5rem 1rem;
-  border: none;
+  border: #F1F1F1 3px solid;
   background-color: ${({ active, theme }) =>
     active ? "#FFFFFF" : theme.colors.backgroundAlt || "#F1F1F1"};
   color: ${({ active, theme }) =>
