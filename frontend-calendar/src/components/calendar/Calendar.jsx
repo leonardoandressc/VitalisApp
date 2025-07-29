@@ -119,9 +119,6 @@ export default function Calendar() {
   // Handler para cambios de vista
   const handleViewChange = (newView) => {
     setView(newView);
-    if (calendarRef.current) {
-      calendarRef.current.getApi().changeView(newView);
-    }
   };
 
   // Mapeo de vistas
@@ -139,8 +136,11 @@ export default function Calendar() {
     if (calendarRef.current) {
       const api = calendarRef.current.getApi();
       api.gotoDate(newDate);
+      if (view !== 'day') {
+        setView('day');
+      }
     }
-  }, []);
+  }, [view]);
 
   return (
     <CalendarContainer>
