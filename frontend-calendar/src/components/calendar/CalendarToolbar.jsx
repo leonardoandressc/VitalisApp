@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { MdChevronLeft, MdChevronRight, MdToday, MdViewDay, MdViewWeek, MdDateRange, MdAdd } from 'react-icons/md';
@@ -9,8 +8,9 @@ const ToolbarContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  max-width: 100%;
-  margin: 0 auto;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  width: 100%;
 `;
 
 const NavSection = styled.div`
@@ -104,7 +104,6 @@ export default function CalendarToolbar({
   return (
     <ToolbarContainer>
       <NavSection>
-        {/* Botones de navegación */}
         <NavButton onClick={onPrev}>
           <MdChevronLeft size={20} />
         </NavButton>
@@ -126,22 +125,22 @@ export default function CalendarToolbar({
       <NavSection>
         <ViewControls>
           <ViewButton 
-            active={currentView === 'Day'}
-            onClick={() => onViewChange('Day')}
+            active={currentView === 'timeGridDay'}
+            onClick={() => onViewChange('timeGridDay')}
           >
             <MdViewDay size={16} />
             Día
           </ViewButton>
           <ViewButton 
-            active={currentView === 'Week'}
-            onClick={() => onViewChange('week')}
+            active={currentView === 'timeGridWeek'}
+            onClick={() => onViewChange('timeGridWeek')}
           >
             <MdViewWeek size={16} />
             Semana
           </ViewButton>
           <ViewButton 
-            active={currentView === 'Month'}
-            onClick={() => onViewChange('Month')}
+            active={currentView === 'dayGridMonth'}
+            onClick={() => onViewChange('dayGridMonth')}
           >
             <MdDateRange size={16} />
             Mes
