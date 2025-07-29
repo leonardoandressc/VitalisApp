@@ -2,10 +2,10 @@
 import { useState } from 'react';
 import { ThemeProvider } from '@emotion/react';
 import styled from '@emotion/styled';
-import { lightTheme, darkTheme } from '../theme';
-import Sidebar from './Sidebar';
-import Topbar from './Topbar';
-import Calendar from './calendar/Calendar'; // Importamos el componente externo
+import { lightTheme, darkTheme } from '../../theme';
+import Sidebar from '../Sidebar';
+import Topbar from '../Topbar';
+import Calendar from '../calendar/Calendar'; // Importamos el componente externo
 
 // Estilos del Layout (se mantienen igual)
 const LayoutWrapper = styled.div`
