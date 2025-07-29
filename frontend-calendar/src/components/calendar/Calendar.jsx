@@ -31,38 +31,41 @@ export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [view, setView] = useState('week');
   const calendarRef = useRef(null);
-  const ignoreDateChange = useRef(false);
+  const updateSource = useRef('state'); // 'state' | 'calendar'
 
-  const changeDate = useCallback((amount, unit) => {
-    ignoreDateChange.current = true;
+  // Función para cambiar fecha sincronizando ambos sistemas
+  const syncDateChange = useCallback((newDate, source) => {
+    updateSource.current = source;
+    setCurrentDate(newDate);
+    
+    if (calendarRef.current && source === 'state') {
+      const calendarApi = calendarRef.current.getApi();
+      if (!calendarApi.currentStart || 
+          new Date(calendarApi.currentStart).getTime() !== newDate.getTime()) {
+        calendarApi.gotoDate(newDate);
+      }
+    }
+  }, []);
+
+  // Navegación
+  const navigateDate = useCallback((amount, unit) => {
     const newDate = new Date(currentDate);
     
     if (unit === 'day') newDate.setDate(newDate.getDate() + amount);
     else if (unit === 'week') newDate.setDate(newDate.getDate() + (amount * 7));
     else if (unit === 'month') newDate.setMonth(newDate.getMonth() + amount);
 
-    setCurrentDate(newDate);
-    
-    if (calendarRef.current) {
-      calendarRef.current.getApi().gotoDate(newDate);
-    }
-    
-    ignoreDateChange.current = false;
-  }, [currentDate]);
+    syncDateChange(newDate, 'state');
+  }, [currentDate, syncDateChange]);
 
-  const handlePrev = useCallback(() => changeDate(-1, view), [view, changeDate]);
-  const handleNext = useCallback(() => changeDate(1, view), [view, changeDate]);
+  const handlePrev = useCallback(() => navigateDate(-1, view), [view, navigateDate]);
+  const handleNext = useCallback(() => navigateDate(1, view), [view, navigateDate]);
 
   const handleToday = useCallback(() => {
-    ignoreDateChange.current = true;
-    const today = new Date();
-    setCurrentDate(today);
-    if (calendarRef.current) {
-      calendarRef.current.getApi().today();
-    }
-    ignoreDateChange.current = false;
-  }, []);
+    syncDateChange(new Date(), 'state');
+  }, [syncDateChange]);
 
+  // Manejo de teclado
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (['INPUT', 'TEXTAREA'].includes(e.target.tagName)) return;
@@ -75,34 +78,34 @@ export default function Calendar() {
         handleNext();
       } else if (view === 'day' && e.key === 'ArrowUp') {
         e.preventDefault();
-        changeDate(-1, 'week');
+        navigateDate(-1, 'week');
       } else if (view === 'day' && e.key === 'ArrowDown') {
         e.preventDefault();
-        changeDate(1, 'week');
+        navigateDate(1, 'week');
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [view, handlePrev, handleNext, changeDate]);
+  }, [view, handlePrev, handleNext, navigateDate]);
 
-  const handleViewChange = (newView) => setView(newView);
-  
-  const handleDateChange = (date) => {
-    ignoreDateChange.current = true;
-    setCurrentDate(date);
-    if (calendarRef.current) {
-      calendarRef.current.getApi().gotoDate(date);
+  // Handler para cambios de fecha desde el calendario
+  const handleDatesSet = useCallback((dateInfo) => {
+    if (updateSource.current === 'calendar') {
+      const newDate = dateInfo.view.currentStart;
+      if (newDate.getTime() !== currentDate.getTime()) {
+        setCurrentDate(newDate);
+      }
     }
-    ignoreDateChange.current = false;
+    updateSource.current = 'calendar';
+  }, [currentDate]);
+
+  // Handler para cambios de vista
+  const handleViewChange = (newView) => {
+    setView(newView);
   };
 
-  const handleDatesSet = useCallback((dateInfo) => {
-    if (!ignoreDateChange.current) {
-      setCurrentDate(dateInfo.view.currentStart);
-    }
-  }, []);
-
+  // Mapeo de vistas
   const getCalendarView = () => {
     switch(view) {
       case 'day': return 'timeGridDay';
@@ -111,7 +114,7 @@ export default function Calendar() {
       default: return 'timeGridWeek';
     }
   };
-  
+
   return (
     <CalendarContainer>
       <MainContent>
@@ -143,7 +146,7 @@ export default function Calendar() {
       
       <CalendarSidebar 
         currentDate={currentDate} 
-        onDateChange={handleDateChange} 
+        onDateChange={(date) => syncDateChange(date, 'state')} 
       />
     </CalendarContainer>
   );
