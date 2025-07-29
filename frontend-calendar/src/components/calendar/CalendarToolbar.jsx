@@ -19,6 +19,36 @@ const NavSection = styled.div`
   gap: 1rem;
 `;
 
+const NavButton = styled.button`
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #111827;
+  
+  &:hover {
+    background: #f3f4f6;
+  }
+`;
+
+const TodayButton = styled.button`
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: #3b82f6;
+  color: white;
+  font-weight: 500;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+`;
+
 const DateTitle = styled.h2`
   margin: 0 1rem;
   font-size: 1.25rem;
@@ -68,64 +98,25 @@ export default function CalendarToolbar({
   onPrev, 
   onNext, 
   onToday, 
-  view, 
+  currentView,
   onViewChange 
 }) {
   return (
     <ToolbarContainer>
       <NavSection>
-        <button 
-          css={css`
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 4px;
-            &:hover {
-              background: #f3f4f6;
-            }
-          `}
-          onClick={onPrev}
-        >
+        {/* Botones de navegación */}
+        <NavButton onClick={onPrev}>
           <MdChevronLeft size={20} />
-        </button>
+        </NavButton>
         
-        <button 
-          css={css`
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 4px;
-            &:hover {
-              background: #f3f4f6;
-            }
-          `}
-          onClick={onNext}
-        >
+        <NavButton onClick={onNext}>
           <MdChevronRight size={20} />
-        </button>
+        </NavButton>
         
-        <button 
-          css={css`
-            background: none;
-            border: 1px solid #e5e7eb;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            font-weight: 500;
-            &:hover {
-              background: #f3f4f6;
-            }
-          `}
-          onClick={onToday}
-        >
+        <TodayButton onClick={onToday}>
           <MdToday size={16} />
           Hoy
-        </button>
+        </TodayButton>
         
         <DateTitle>
           {dayjs(currentDate).format('MMMM D, YYYY')}
@@ -135,24 +126,24 @@ export default function CalendarToolbar({
       <NavSection>
         <ViewControls>
           <ViewButton 
-            active={view === 'day'}
-            onClick={() => onViewChange('day')}
+            active={currentView === 'Day'}
+            onClick={() => onViewChange('Day')}
           >
             <MdViewDay size={16} />
             Día
           </ViewButton>
           <ViewButton 
-            active={view === 'week'}
+            active={currentView === 'Week'}
             onClick={() => onViewChange('week')}
           >
             <MdViewWeek size={16} />
             Semana
           </ViewButton>
           <ViewButton 
-            active={view === 'month'}
-            onClick={() => onViewChange('month')}
+            active={currentView === 'Month'}
+            onClick={() => onViewChange('Month')}
           >
-            <MdDateRange size={16} /> {/* Cambiado a MdDateRange */}
+            <MdDateRange size={16} />
             Mes
           </ViewButton>
         </ViewControls>
