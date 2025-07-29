@@ -46,20 +46,24 @@ export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [currentView, setCurrentView] = useState('timeGridWeek');
   const calendarRef = useRef(null);
-  const updateSource = useRef('state'); // 'state' | 'calendar'
+  const lastHandledDate = useRef(new Date());
 
-  // Maneja cambios de fecha
-  const handleDateChange = useCallback((date, source = 'state') => {
-    updateSource.current = source;
-    setCurrentDate(date);
-    
-    if (calendarRef.current && source === 'state') {
-      const api = calendarRef.current.getApi();
-      api.gotoDate(date);
+  // Función para cambiar fecha
+  const handleDateChange = useCallback((newDate) => {
+    const date = new Date(newDate);
+    if (date.getTime() !== lastHandledDate.current.getTime()) {
+      lastHandledDate.current = date;
+      setCurrentDate(date);
+      if (calendarRef.current) {
+        const api = calendarRef.current.getApi();
+        if (!api.currentStart || new Date(api.currentStart).getTime() !== date.getTime()) {
+          api.gotoDate(date);
+        }
+      }
     }
   }, []);
 
-  // Maneja cambios de vista
+  // Función para cambiar vista
   const handleViewChange = useCallback((view) => {
     setCurrentView(view);
     if (calendarRef.current) {
@@ -70,24 +74,23 @@ export default function Calendar() {
   // Navegación
   const navigate = useCallback((amount) => {
     if (!calendarRef.current) return;
-    
     const api = calendarRef.current.getApi();
     api[amount > 0 ? 'next' : 'prev']();
-    handleDateChange(api.getDate(), 'state');
+    handleDateChange(api.getDate());
   }, [handleDateChange]);
 
-  // Ir a la fecha actual
+  // Ir a hoy
   const handleToday = useCallback(() => {
-    handleDateChange(new Date(), 'state');
+    handleDateChange(new Date());
   }, [handleDateChange]);
 
-  // Handler para cambios de fecha desde el calendario
+  // Handler para datesSet
   const handleDatesSet = useCallback(({ view }) => {
-    if (updateSource.current === 'calendar') {
-      const newDate = view.currentStart;
+    const newDate = view.currentStart;
+    if (newDate.getTime() !== lastHandledDate.current.getTime()) {
+      lastHandledDate.current = newDate;
       setCurrentDate(newDate);
     }
-    updateSource.current = 'calendar';
   }, []);
 
   return (
@@ -125,7 +128,7 @@ export default function Calendar() {
         <CalendarSidebar 
           currentDate={currentDate} 
           onDateChange={(date) => {
-            handleDateChange(date, 'state');
+            handleDateChange(date);
             handleViewChange('timeGridDay');
           }} 
         />
