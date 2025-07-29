@@ -4,6 +4,7 @@ import { MdChevronLeft, MdChevronRight, MdToday, MdViewDay, MdViewWeek, MdDateRa
 import dayjs from 'dayjs';
 import { IconButton } from '../ui/IconButton';
 import { Button } from '../ui/Button';
+import { ViewButton } from '../ui/ViewButton';
 
 const ToolbarContainer = styled.div`
   display: flex;
@@ -33,23 +34,6 @@ const ViewControls = styled.div`
   background: ${({ theme }) => theme.colors.light};
   border-radius: 8px;
   overflow: hidden;
-`;
-
-const ViewButton = styled.button`
-  padding: 0.5rem 1rem;
-  border: none;
-  background: ${({ active, theme }) => active ? theme.colors.primary : 'transparent'};
-  color: ${({ active, theme }) => active ? '#fff' : theme.colors.textMuted};
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  transition: 0.2s ease;
-
-  &:hover {
-    background: ${({ active, theme }) => active ? theme.colors.primary : theme.colors.lightHover};
-  }
 `;
 
 export default function CalendarToolbar({ 

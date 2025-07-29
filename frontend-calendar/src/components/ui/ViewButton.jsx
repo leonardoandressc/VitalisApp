@@ -4,28 +4,31 @@ import styled from "@emotion/styled";
 const StyledViewButton = styled.button`
   padding: 0.5rem 1rem;
   border: none;
-  background: ${({ active, theme }) => active ? theme.colors.primary : "transparent"};
-  color: ${({ active, theme }) => active ? "#fff" : theme.colors.textMuted};
+  background-color: ${({ active, theme }) =>
+    active ? "#FFFFFF" : theme.colors.backgroundAlt || "#F1F1F1"};
+  color: ${({ active, theme }) =>
+    active ? theme.colors.primary : theme.colors.textMuted};
   font-weight: 500;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  transition: background 0.2s ease;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: ${({ active }) => (active ? "0 1px 4px rgba(0, 0, 0, 0.1)" : "none")};
 
   &:hover {
-    background: ${({ active, theme }) =>
-      active ? theme.colors.primary : theme.colors.lightHover};
+    background-color: ${({ active, theme }) =>
+      active ? "#FFFFFF" : theme.colors.backgroundHover || "#EDEDED"};
   }
 
   &:first-of-type {
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
   }
 
   &:last-of-type {
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
   }
 `;
 
