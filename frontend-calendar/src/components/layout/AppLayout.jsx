@@ -3,16 +3,13 @@ import { useState } from 'react';
 import { ThemeProvider } from '@emotion/react';
 import styled from '@emotion/styled';
 import { lightTheme, darkTheme } from '../../theme';
-import Sidebar from '../Sidebar';
-import Topbar from '../Topbar';
-import Calendar from '../calendar/Calendar'; // Importamos el componente externo
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
 
-// Estilos del Layout (se mantienen igual)
 const LayoutWrapper = styled.div`
   display: flex;
   height: 100vh;
   width: 100vw;
-  position: fixed;
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
@@ -28,7 +25,7 @@ const ContentWrapper = styled.main`
   overflow-y: auto;
 `;
 
-export default function AppLayout() {
+export default function AppLayout({ children }) {
   const [mode, setMode] = useState('light');
   const currentTheme = mode === 'light' ? lightTheme : darkTheme;
 
@@ -43,8 +40,7 @@ export default function AppLayout() {
         <MainContent>
           <Topbar toggleTheme={toggleTheme} mode={mode} />
           <ContentWrapper>
-            {/* Aquí se integra el componente Calendar */}
-            <Calendar />
+            {children}
           </ContentWrapper>
         </MainContent>
       </LayoutWrapper>
