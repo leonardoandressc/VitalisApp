@@ -47,14 +47,12 @@ import CalendarPage from './components/calendar/CalendarPage';
 
 function App() {
   return (
-    <Router>
       <AppLayout>
         <Routes>
           <Route path="/" element={<CalendarPage />} />
           {/* más rutas como DashboardPage, SettingsPage, etc. */}
         </Routes>
       </AppLayout>
-    </Router>
   );
 }
 
