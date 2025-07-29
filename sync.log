@@ -10909,3 +10909,22 @@ After doing this, you may fix the identity used for this commit with:
 To https://github.com/leonardoandressc/VitalisApp.git
    17a164b..1f373be  main -> main
 [Tue Jul 29 23:07:06 UTC 2025] Sincronizado con GitHub
+[main 6a719e9] Auto-commit: 2025-07-29 23:12:06
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 4 files changed, 36 insertions(+), 11 deletions(-)
+ create mode 100644 frontend-calendar/src/components/ui/IconButton.jsx
+To https://github.com/leonardoandressc/VitalisApp.git
+   1f373be..6a719e9  main -> main
+[Tue Jul 29 23:12:07 UTC 2025] Sincronizado con GitHub

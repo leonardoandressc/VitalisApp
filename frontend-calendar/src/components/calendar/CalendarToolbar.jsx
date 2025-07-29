@@ -1,15 +1,17 @@
-import { css } from '@emotion/react';
+/** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
 import { MdChevronLeft, MdChevronRight, MdToday, MdViewDay, MdViewWeek, MdDateRange, MdAdd } from 'react-icons/md';
 import dayjs from 'dayjs';
+import { IconButton } from '../ui/IconButton';
+import { Button } from '../ui/Button';
 
 const ToolbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background: white;
-  border-bottom: 1px solid #e5e7eb;
+  background: ${({ theme }) => theme.colors.surface};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   width: 100%;
 `;
 
@@ -19,77 +21,34 @@ const NavSection = styled.div`
   gap: 1rem;
 `;
 
-const NavButton = styled.button`
-  background: none;
-  border: none;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: #111827;
-  
-  &:hover {
-    background: #f3f4f6;
-  }
-`;
-
-const TodayButton = styled.button`
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  background: #3b82f6;
-  color: white;
-  font-weight: 500;
-  border: none;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  cursor: pointer;
-`;
-
 const DateTitle = styled.h2`
-  margin: 0 1rem;
+  margin-left: 1rem;
   font-size: 1.25rem;
   font-weight: 600;
-  color: #111827;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 const ViewControls = styled.div`
   display: flex;
-  background: #f3f4f6;
-  border-radius: 6px;
+  background: ${({ theme }) => theme.colors.light};
+  border-radius: 8px;
+  overflow: hidden;
 `;
 
 const ViewButton = styled.button`
   padding: 0.5rem 1rem;
   border: none;
-  background: ${({ active }) => active ? '#3b82f6' : 'transparent'};
-  color: ${({ active }) => active ? 'white' : '#4b5563'};
-  border-radius: 4px;
+  background: ${({ active, theme }) => active ? theme.colors.primary : 'transparent'};
+  color: ${({ active, theme }) => active ? '#fff' : theme.colors.textMuted};
+  font-weight: 500;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  font-weight: 500;
-`;
-
-const AddButton = styled.button`
-  padding: 0.5rem 1rem;
-  background: #3b82f6;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s;
+  transition: 0.2s ease;
 
   &:hover {
-    background: #2563eb;
+    background: ${({ active, theme }) => active ? theme.colors.primary : theme.colors.lightHover};
   }
 `;
 
@@ -104,53 +63,29 @@ export default function CalendarToolbar({
   return (
     <ToolbarContainer>
       <NavSection>
-        <NavButton onClick={onPrev}>
-          <MdChevronLeft size={20} />
-        </NavButton>
-        
-        <NavButton onClick={onNext}>
-          <MdChevronRight size={20} />
-        </NavButton>
-        
-        <TodayButton onClick={onToday}>
-          <MdToday size={16} />
-          Hoy
-        </TodayButton>
-        
-        <DateTitle>
-          {dayjs(currentDate).format('MMMM D, YYYY')}
-        </DateTitle>
+        <IconButton onClick={onPrev} icon={<MdChevronLeft size={20} />} />
+        <IconButton onClick={onNext} icon={<MdChevronRight size={20} />} />
+        <Button onClick={onToday} icon={<MdToday size={16} />}>Hoy</Button>
+        <DateTitle>{dayjs(currentDate).format('MMMM D, YYYY')}</DateTitle>
       </NavSection>
-      
+
       <NavSection>
         <ViewControls>
-          <ViewButton 
-            active={currentView === 'timeGridDay'}
-            onClick={() => onViewChange('timeGridDay')}
-          >
+          <ViewButton active={currentView === 'timeGridDay'} onClick={() => onViewChange('timeGridDay')}>
             <MdViewDay size={16} />
             Día
           </ViewButton>
-          <ViewButton 
-            active={currentView === 'timeGridWeek'}
-            onClick={() => onViewChange('timeGridWeek')}
-          >
+          <ViewButton active={currentView === 'timeGridWeek'} onClick={() => onViewChange('timeGridWeek')}>
             <MdViewWeek size={16} />
             Semana
           </ViewButton>
-          <ViewButton 
-            active={currentView === 'dayGridMonth'}
-            onClick={() => onViewChange('dayGridMonth')}
-          >
+          <ViewButton active={currentView === 'dayGridMonth'} onClick={() => onViewChange('dayGridMonth')}>
             <MdDateRange size={16} />
             Mes
           </ViewButton>
         </ViewControls>
-        
-        <AddButton>
-          <MdAdd size={16} />
-          Nueva cita
-        </AddButton>
+
+        <Button icon={<MdAdd size={16} />}>Nueva cita</Button>
       </NavSection>
     </ToolbarContainer>
   );
