@@ -12,6 +12,7 @@ const CalendarContainer = styled.div`
   display: flex;
   height: 100vh;
   background: #f9fafb;
+  flex-direction: column; /* Cambiamos a columna para estructura vertical */
 `;
 
 const MainContent = styled.div`
@@ -21,10 +22,25 @@ const MainContent = styled.div`
   overflow: hidden;
 `;
 
+
 const CalendarWrapper = styled.div`
   flex: 1;
   padding: 1rem;
   background: white;
+  overflow: auto;
+`;
+
+const HeaderWrapper = styled.div`
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 10; /* Aseguramos que esté sobre otros elementos */
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  flex: 1;
+  overflow: hidden;
 `;
 
 export default function Calendar() {
@@ -128,7 +144,7 @@ export default function Calendar() {
 
   return (
     <CalendarContainer>
-      <MainContent>
+      <HeaderWrapper>
         <CalendarToolbar
           currentDate={currentDate}
           onPrev={handlePrev}
@@ -137,28 +153,31 @@ export default function Calendar() {
           view={view}
           onViewChange={handleViewChange}
         />
-        
-        <CalendarWrapper>
-          <FullCalendar
-            ref={calendarRef}
-            plugins={[timeGridPlugin, dayGridPlugin, interactionPlugin]}
-            initialView={view === 'day' ? 'timeGridDay' : 
-                        view === 'week' ? 'timeGridWeek' : 'dayGridMonth'}
-            headerToolbar={false}
-            height="100%"
-            nowIndicator={true}
-            initialDate={currentDate}
-            locales={[esLocale]}
-            locale="es"
-            firstDay={1}
-          />
-        </CalendarWrapper>
-      </MainContent>
-      
-      <CalendarSidebar 
-        currentDate={currentDate} 
-        onDateChange={handleDateChange} 
-      />
+      </HeaderWrapper>
+
+      <ContentWrapper>
+        <MainContent>
+          <CalendarWrapper>
+            <FullCalendar
+              ref={calendarRef}
+              plugins={[timeGridPlugin, dayGridPlugin, interactionPlugin]}
+              initialView={getCalendarView()}
+              headerToolbar={false}
+              height="100%"
+              nowIndicator={true}
+              initialDate={currentDate}
+              locales={[esLocale]}
+              locale="es"
+              firstDay={1}
+            />
+          </CalendarWrapper>
+        </MainContent>
+
+        <CalendarSidebar 
+          currentDate={currentDate} 
+          onDateChange={handleDateChange} 
+        />
+      </ContentWrapper>
     </CalendarContainer>
   );
 }
