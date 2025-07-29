@@ -50,6 +50,8 @@ function App() {
       <AppLayout>
         <Routes>
           <Route path="/" element={<CalendarPage />} />
+          <Route path="/calendar" element={<CalendarPage />} />
+          <Route path="*" element={<CalendarPage />} />
           {/* más rutas como DashboardPage, SettingsPage, etc. */}
         </Routes>
       </AppLayout>
