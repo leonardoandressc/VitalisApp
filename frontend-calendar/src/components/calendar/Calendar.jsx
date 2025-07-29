@@ -126,10 +126,6 @@ export default function Calendar() {
     }
   }, [view]);
 
-  const handleViewChange = useCallback((newView) => {
-    setView(newView);
-  }, []);
-
   return (
     <CalendarContainer>
       <MainContent>
@@ -146,7 +142,8 @@ export default function Calendar() {
           <FullCalendar
             ref={calendarRef}
             plugins={[timeGridPlugin, dayGridPlugin, interactionPlugin]}
-            initialView={getCalendarView()}
+            initialView={view === 'day' ? 'timeGridDay' : 
+                        view === 'week' ? 'timeGridWeek' : 'dayGridMonth'}
             headerToolbar={false}
             height="100%"
             nowIndicator={true}
@@ -154,14 +151,13 @@ export default function Calendar() {
             locales={[esLocale]}
             locale="es"
             firstDay={1}
-            datesSet={handleDatesSet}
           />
         </CalendarWrapper>
       </MainContent>
       
       <CalendarSidebar 
         currentDate={currentDate} 
-        onDateChange={(date) => syncDateChange(date, 'state')} 
+        onDateChange={handleDateChange} 
       />
     </CalendarContainer>
   );
