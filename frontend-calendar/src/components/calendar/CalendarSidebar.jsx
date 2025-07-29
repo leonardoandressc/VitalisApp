@@ -12,7 +12,7 @@ const SidebarContainer = styled.div`
   flex-direction: column;
 `;
 
-const MiniCalendarHeader = styled.div`
+const CalendarHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,46 +43,46 @@ const DaysGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 0.25rem;
-  
-  .day-name {
-    text-align: center;
-    font-size: 0.75rem;
-    color: #6b7280;
-    padding: 0.25rem;
-  }
-  
-  .day {
-    text-align: center;
-    padding: 0.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.875rem;
-    
-    &:hover {
-      background: #f3f4f6;
-    }
-    
-    &.current {
-      background: #3b82f6;
-      color: white;
-    }
-    
-    &.other-month {
-      color: #d1d5db;
-    }
-    
-    &.today {
-      font-weight: bold;
-      color: #3b82f6;
-      
-      &.current {
-        color: white;
-      }
-    }
-  }
+  margin-bottom: 1.5rem;
 `;
 
-// ... (otros componentes styled se mantienen igual)
+const DayName = styled.div`
+  text-align: center;
+  font-size: 0.75rem;
+  color: #6b7280;
+  padding: 0.25rem;
+`;
+
+const Day = styled.div`
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  
+  &:hover {
+    background: #f3f4f6;
+  }
+  
+  ${({ $isCurrent }) => $isCurrent && `
+    background: #3b82f6;
+    color: white;
+  `}
+  
+  ${({ $isOtherMonth }) => $isOtherMonth && `
+    color: #d1d5db;
+  `}
+  
+  ${({ $isToday }) => $isToday && `
+    font-weight: bold;
+    color: #3b82f6;
+  `}
+`;
+
+const SelectorSection = styled.div`
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+`;
 
 export default function CalendarSidebar({ currentDate, onDateChange }) {
   const [currentMonth, setCurrentMonth] = useState(dayjs());
@@ -91,87 +91,47 @@ export default function CalendarSidebar({ currentDate, onDateChange }) {
     setCurrentMonth(prev => prev.add(amount, 'month'));
   };
 
-  const renderMiniCalendar = () => {
+  const renderCalendar = () => {
     const startOfMonth = currentMonth.startOf('month');
-    const endOfMonth = currentMonth.endOf('month');
-    const daysInMonth = currentMonth.daysInMonth();
     const startDay = startOfMonth.day();
+    const daysInMonth = currentMonth.daysInMonth();
     const today = dayjs();
     
-    const days = [];
+    // Días de la semana
     const dayNames = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
     
-    // Nombres de los días
-    dayNames.forEach(name => {
-      days.push(<div key={`name-${name}`} className="day-name">{name}</div>);
-    });
+    // Calcular días a mostrar
+    const days = [];
+    const totalDays = 42; // 6 semanas
     
-    // Días del mes anterior
-    const prevMonthDays = startOfMonth.day();
-    const prevMonth = currentMonth.subtract(1, 'month');
-    const daysInPrevMonth = prevMonth.daysInMonth();
-    
-    for (let i = 0; i < prevMonthDays; i++) {
-      const day = daysInPrevMonth - prevMonthDays + i + 1;
-      const date = prevMonth.date(day);
-      
-      days.push(
-        <div 
-          key={`prev-${day}`} 
-          className="day other-month"
-          onClick={() => {
-            onDateChange(date.toDate());
-            setCurrentMonth(date);
-          }}
-        >
-          {day}
-        </div>
-      );
-    }
-    
-    // Días del mes actual
-    for (let i = 1; i <= daysInMonth; i++) {
-      const date = currentMonth.date(i);
+    for (let i = 0; i < totalDays; i++) {
+      const dayOffset = i - startDay;
+      const date = currentMonth.startOf('month').add(dayOffset, 'day');
+      const isCurrentMonth = date.month() === currentMonth.month();
       const isCurrent = dayjs(currentDate).isSame(date, 'day');
       const isToday = date.isSame(today, 'day');
       
       days.push(
-        <div 
-          key={`current-${i}`} 
-          className={`day ${isCurrent ? 'current' : ''} ${isToday ? 'today' : ''}`}
-          onClick={() => onDateChange(date.toDate())}
-        >
-          {i}
-        </div>
-      );
-    }
-    
-    // Días del siguiente mes
-    const nextMonthDays = 6 - endOfMonth.day();
-    const nextMonth = currentMonth.add(1, 'month');
-    
-    for (let i = 1; i <= nextMonthDays; i++) {
-      days.push(
-        <div 
-          key={`next-${i}`} 
-          className="day other-month"
+        <Day
+          key={i}
+          $isCurrent={isCurrent}
+          $isOtherMonth={!isCurrentMonth}
+          $isToday={isToday && isCurrentMonth}
           onClick={() => {
-            onDateChange(nextMonth.date(i).toDate());
-            setCurrentMonth(nextMonth);
+            onDateChange(date.toDate());
+            if (!isCurrentMonth) {
+              setCurrentMonth(date);
+            }
           }}
         >
-          {i}
-        </div>
+          {date.date()}
+        </Day>
       );
     }
     
-    return days;
-  };
-  
-  return (
-    <SidebarContainer>
-      <MiniCalendar>
-        <MiniCalendarHeader>
+    return (
+      <>
+        <CalendarHeader>
           <button onClick={() => navigateMonth(-1)}>
             <MdChevronLeft size={16} />
           </button>
@@ -179,13 +139,25 @@ export default function CalendarSidebar({ currentDate, onDateChange }) {
           <button onClick={() => navigateMonth(1)}>
             <MdChevronRight size={16} />
           </button>
-        </MiniCalendarHeader>
+        </CalendarHeader>
+        
         <DaysGrid>
-          {renderMiniCalendar()}
+          {dayNames.map(name => (
+            <DayName key={name}>{name}</DayName>
+          ))}
+          {days}
         </DaysGrid>
-      </MiniCalendar>
+      </>
+    );
+  };
+  
+  return (
+    <SidebarContainer>
+      {renderCalendar()}
       
-      {/* ... (resto del sidebar se mantiene igual) */}
+      <SelectorSection>
+        {/* Aquí irían los selectores de calendarios/usuarios */}
+      </SelectorSection>
     </SidebarContainer>
   );
 }
