@@ -32,7 +32,7 @@ export default function Calendar() {
   const [view, setView] = useState('week');
   const calendarRef = useRef(null);
   const updateSource = useRef('state'); // 'state' | 'calendar'
-
+  
   // Función para cambiar fecha sincronizando ambos sistemas
   const syncDateChange = useCallback((newDate, source) => {
     updateSource.current = source;
@@ -46,7 +46,7 @@ export default function Calendar() {
       }
     }
   }, []);
-
+  
   // Navegación
   const navigateDate = useCallback((amount, unit) => {
     const newDate = new Date(currentDate);
