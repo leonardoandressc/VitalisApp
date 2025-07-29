@@ -9,8 +9,8 @@ const ToolbarContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background: white;
-  border-bottom: 1px solid #e5e7eb;
+  max-width: 100%;
+  margin: 0 auto;
 `;
 
 const NavSection = styled.div`
