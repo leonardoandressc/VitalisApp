@@ -7,7 +7,7 @@ const StyledViewButton = styled.button`
   background-color: ${({ active, theme }) =>
     active ? "#FFFFFF" : theme.colors.backgroundAlt || "#F1F1F1"};
   color: ${({ active, theme }) =>
-    active ? theme.colors.primary : theme.colors.textMuted};
+    active ? theme.colors.secondary : theme.colors.textMuted};
   font-weight: 500;
   cursor: pointer;
   display: flex;

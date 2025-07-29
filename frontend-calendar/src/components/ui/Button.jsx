@@ -6,8 +6,8 @@ const getButtonStyles = (variant, theme) => {
     case "outline":
       return `
         background-color: transparent;
-        color: ${theme.colors.primary};
-        border: 2px solid ${theme.colors.primary};
+        color: ${theme.colors.secondary};
+        border: 2px solid ${theme.colors.secondary};
 
         &:hover {
           background-color: ${theme.colors.lightHover};
@@ -16,7 +16,7 @@ const getButtonStyles = (variant, theme) => {
     case "primary":
     default:
       return `
-        background-color: ${theme.colors.primary};
+        background-color: ${theme.colors.secondary};
         color: white;
         border: none;
 
