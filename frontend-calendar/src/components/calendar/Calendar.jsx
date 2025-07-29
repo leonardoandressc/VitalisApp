@@ -81,6 +81,20 @@ export default function Calendar() {
     syncDateChange(new Date(), 'state');
   }, [syncDateChange]);
 
+  const navigate = useCallback((amount) => {
+    if (!calendarRef.current) return;
+    
+    const api = calendarRef.current.getApi();
+    
+    if (view === 'timeGridDay') {
+      api.prev(); // o api.next() según la dirección
+    } else if (view === 'timeGridWeek') {
+      api.prev(); // o api.next()
+    } else if (view === 'dayGridMonth') {
+      api.prev(); // o api.next()
+    }
+  }, [view]);
+
   // Manejo de teclado
   useEffect(() => {
     const handleKeyDown = (e) => {

@@ -104,6 +104,7 @@ export default function CalendarToolbar({
   return (
     <ToolbarContainer>
       <NavSection>
+        {/* Botones de navegación */}
         <NavButton onClick={onPrev}>
           <MdChevronLeft size={20} />
         </NavButton>
