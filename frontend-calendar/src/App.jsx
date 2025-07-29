@@ -7,7 +7,7 @@ import ThemeToggle from "./components/ThemeToggle";
 import Login from "./components/Login";
 import Register from "./routes/Register"; // << nueva ruta
 import CalendarView from './routes/CalendarView';
-import AppLayout from './components/AppLayout';
+import AppLayout from './components/layout/AppLayout';
 
 /*
 function App() {

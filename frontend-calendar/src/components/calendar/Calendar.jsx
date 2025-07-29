@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import { useState, useCallback, useRef } from 'react';
 import styled from '@emotion/styled';
 import FullCalendar from '@fullcalendar/react';
@@ -7,18 +8,19 @@ import interactionPlugin from '@fullcalendar/interaction';
 import esLocale from '@fullcalendar/core/locales/es';
 import CalendarToolbar from './CalendarToolbar';
 import CalendarSidebar from './CalendarSidebar';
+import { useTheme } from '@emotion/react';
 
 const CalendarContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: #f9fafb;
+  background: ${({ theme }) => theme.colors.background};
 `;
 
 const HeaderWrapper = styled.header`
   width: 100%;
-  background: white;
-  border-bottom: 1px solid #e5e7eb;
+  background: ${({ theme }) => theme.colors.surface};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   z-index: 10;
 `;
 
@@ -38,7 +40,7 @@ const MainContent = styled.main`
 const CalendarWrapper = styled.div`
   flex: 1;
   padding: 1rem;
-  background: white;
+  background: ${({ theme }) => theme.colors.surface};
   overflow: auto;
 `;
 
@@ -47,8 +49,8 @@ export default function Calendar() {
   const [currentView, setCurrentView] = useState('timeGridWeek');
   const calendarRef = useRef(null);
   const lastHandledDate = useRef(new Date());
+  const theme = useTheme();
 
-  // Función para cambiar fecha
   const handleDateChange = useCallback((newDate) => {
     const date = new Date(newDate);
     if (date.getTime() !== lastHandledDate.current.getTime()) {
@@ -63,7 +65,6 @@ export default function Calendar() {
     }
   }, []);
 
-  // Función para cambiar vista
   const handleViewChange = useCallback((view) => {
     setCurrentView(view);
     if (calendarRef.current) {
@@ -71,7 +72,6 @@ export default function Calendar() {
     }
   }, []);
 
-  // Navegación
   const navigate = useCallback((amount) => {
     if (!calendarRef.current) return;
     const api = calendarRef.current.getApi();
@@ -79,12 +79,10 @@ export default function Calendar() {
     handleDateChange(api.getDate());
   }, [handleDateChange]);
 
-  // Ir a hoy
   const handleToday = useCallback(() => {
     handleDateChange(new Date());
   }, [handleDateChange]);
 
-  // Handler para datesSet
   const handleDatesSet = useCallback(({ view }) => {
     const newDate = view.currentStart;
     if (newDate.getTime() !== lastHandledDate.current.getTime()) {

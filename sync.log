@@ -10882,3 +10882,30 @@ After doing this, you may fix the identity used for this commit with:
 To https://github.com/leonardoandressc/VitalisApp.git
    b637f56..17a164b  main -> main
 [Tue Jul 29 23:02:05 UTC 2025] Sincronizado con GitHub
+[main 1f373be] Auto-commit: 2025-07-29 23:07:05
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 10 files changed, 29 insertions(+), 4 deletions(-)
+ rename frontend-calendar/src/components/{ => layout}/AppLayout.jsx (85%)
+ rename frontend-calendar/src/components/{componentesMinimos => ui}/Avatar.jsx (100%)
+ rename frontend-calendar/src/components/{componentesMinimos => ui}/Button.jsx (100%)
+ rename frontend-calendar/src/components/{componentesMinimos => ui}/Card.jsx (100%)
+ rename frontend-calendar/src/components/{componentesMinimos => ui}/Input.jsx (100%)
+ rename frontend-calendar/src/components/{componentesMinimos => ui}/Modal.jsx (100%)
+ rename frontend-calendar/src/components/{componentesMinimos => ui}/Select.jsx (100%)
+ rename frontend-calendar/src/components/{componentesMinimos => ui}/Tag.jsx (100%)
+ create mode 100644 frontend-calendar/src/hooks/useCalendarNavigation.js
+To https://github.com/leonardoandressc/VitalisApp.git
+   17a164b..1f373be  main -> main
+[Tue Jul 29 23:07:06 UTC 2025] Sincronizado con GitHub
