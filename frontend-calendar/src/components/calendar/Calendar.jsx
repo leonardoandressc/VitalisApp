@@ -41,7 +41,9 @@ const CalendarWrapper = styled.div`
   flex: 1;
   padding: 1rem;
   background: ${({ theme }) => theme.colors.surface};
-  overflow: auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 `;
 
 export default function Calendar() {
@@ -50,6 +52,42 @@ export default function Calendar() {
   const calendarRef = useRef(null);
   const lastHandledDate = useRef(new Date());
   const theme = useTheme();
+
+  const calendarStyles = {
+  '.fc': {
+    fontFamily: "'Roboto', sans-serif",
+    fontSize: '14px',
+    color: theme.colors.text,
+  },
+  '.fc-timegrid-slot-label, .fc-col-header-cell': {
+    backgroundColor: theme.colors.background,
+    color: theme.colors.textSecondary,
+    fontWeight: 500,
+  },
+  '.fc-scrollgrid': {
+    borderColor: theme.colors.border,
+  },
+  '.fc-daygrid-day-number': {
+    color: theme.colors.primary,
+  },
+  '.fc-timegrid-slot': {
+    backgroundColor: theme.colors.surface,
+  },
+  '.fc-event': {
+    backgroundColor: theme.colors.secondary,
+    border: 'none',
+    borderRadius: '6px',
+    padding: '2px 4px',
+    color: '#fff',
+    fontSize: '12px',
+  },
+  '.fc-timegrid-now-indicator-arrow': {
+    borderColor: theme.colors.primary,
+  },
+  '.fc-timegrid-now-indicator-line': {
+    backgroundColor: theme.colors.primary,
+  },
+};
 
   const handleDateChange = useCallback((newDate) => {
     const date = new Date(newDate);
