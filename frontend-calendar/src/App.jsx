@@ -1,8 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useState } from "react";
 import { ThemeProvider, Global, css } from "@emotion/react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { lightTheme, darkTheme } from "./theme";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';import { lightTheme, darkTheme } from "./theme";
 import ThemeToggle from "./components/ThemeToggle";
 import Login from "./components/Login";
 import Register from "./routes/Register"; // << nueva ruta
@@ -44,14 +43,18 @@ export default App;
 */
 
 
+import CalendarPage from './components/calendar/CalendarPage';
+
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<AppLayout />}>
-        {/* Otras rutas */}
-        <Route path="/calendar" element={<CalendarView />} />
-      </Route>
-    </Routes>
+    <Router>
+      <AppLayout>
+        <Routes>
+          <Route path="/" element={<CalendarPage />} />
+          {/* más rutas como DashboardPage, SettingsPage, etc. */}
+        </Routes>
+      </AppLayout>
+    </Router>
   );
 }
 

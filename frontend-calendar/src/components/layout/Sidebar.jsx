@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { MdCalendarToday, MdPeople, MdSettings, MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { useTheme } from "@emotion/react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 import { useState, useEffect } from "react";
 
 
