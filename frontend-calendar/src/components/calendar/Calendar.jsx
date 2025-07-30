@@ -35,8 +35,6 @@ const MainContent = styled.main`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  height: auto;
-  width: auto;
 `;
 
 const CalendarWrapper = styled.div`
@@ -171,14 +169,36 @@ export default function Calendar() {
               plugins={[timeGridPlugin, dayGridPlugin, interactionPlugin]}
               initialView={currentView}
               headerToolbar={false}
-              height="100%"
+              contentHeight="auto"
               nowIndicator={true}
               initialDate={currentDate}
               datesSet={handleDatesSet}
               locales={[esLocale]}
               locale="es"
               firstDay={1}
+              dayMaxEvents={true}
+              slotMinTime="07:00:00"
+              slotMaxTime="22:00:00"
+              slotDuration="01:00:00"
+              expandRows={true}
+              slotLabelFormat={{
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false,
+              }}
+              dayHeaderFormat={{
+                weekday: 'short',
+                day: 'numeric',
+                month: 'short',
+              }}
+              dayHeaderClassNames="custom-day-header"
+              slotLabelClassNames="custom-slot-label"
+              viewClassNames="custom-calendar-view"
+              dayCellClassNames="custom-day-cell"
+              height="100%"
+              {...calendarStyles}
             />
+
           </CalendarWrapper>
         </MainContent>
 
