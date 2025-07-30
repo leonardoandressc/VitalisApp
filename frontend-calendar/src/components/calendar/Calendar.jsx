@@ -35,6 +35,8 @@ const MainContent = styled.main`
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  height: auto;
+  width: auto;
 `;
 
 const CalendarWrapper = styled.div`
