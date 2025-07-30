@@ -41,11 +41,21 @@ const CalendarWrapper = styled.div`
   flex: 1;
   padding: 1rem;
   background: ${({ theme }) => theme.colors.surface};
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  overflow: auto;
+  
+  /* Ocultar scrollbars pero mantener funcionalidad */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  
+  &::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+  }
+  
+  /* Asegurar que el calendario se ajuste al contenedor */
+  .fc-view-harness {
+    height: 100% !important;
+  }
 `;
-
 export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [currentView, setCurrentView] = useState('timeGridWeek');
