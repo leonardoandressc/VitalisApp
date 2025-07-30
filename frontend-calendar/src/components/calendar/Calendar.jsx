@@ -68,6 +68,15 @@ export default function Calendar() {
     fontFamily: "'Roboto', sans-serif",
     fontSize: '14px',
     color: theme.colors.text,
+    '.fc-scroller': {
+    overflow: 'hidden !important',
+  },
+  '.fc-scroller-liquid-absolute': {
+    overflow: 'hidden !important',
+  },
+  '.fc-view-harness': {
+    overflow: 'hidden !important',
+  },
   },
   '.fc-timegrid-slot-label, .fc-col-header-cell': {
     backgroundColor: theme.colors.background,

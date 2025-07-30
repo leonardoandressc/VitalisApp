@@ -10,6 +10,15 @@ const SidebarContainer = styled.div`
   background: white;
   display: flex;
   flex-direction: column;
+  overflow: hidden; /* Cambiado de 'auto' a 'hidden' si no quieres scroll */
+  
+  /* O si prefieres scroll pero sin barra visible */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const CalendarHeader = styled.div`
