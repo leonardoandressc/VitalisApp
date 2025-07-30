@@ -1,18 +1,35 @@
 /** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
 
+const PageLayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+`;
+
+const Header = styled.header` /* Tu toolbar */
+  height: 60px;
+  /* estilos... */
+`;
+
 const Container = styled.div`
   padding: 1rem;
-  flex: 1;  /* Ocupa el espacio disponible */
-  overflow: auto; /* O hidden si no quieres scroll */
-  height: auto; /* Asegura que el contenedor ocupe todo el alto disponible */
+  flex: 1;
+  overflow: auto; /* Scroll interno solo aquí */
   
-  /* Opcional: estilos para ocultar scrollbars pero mantener funcionalidad */
+  /* Ocultar scrollbar visual pero mantener funcionalidad */
   scrollbar-width: none;
   -ms-overflow-style: none;
   &::-webkit-scrollbar { display: none; }
 `;
 
 export default function PageContainer({ children }) {
-  return <Container>{children}</Container>;
+  return (
+    <PageLayout>
+      <Header>{/* Tu toolbar */}</Header>
+      <Container>{children}</Container>
+    </PageLayout>
+  );
 }
