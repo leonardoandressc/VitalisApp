@@ -6,7 +6,10 @@ import Calendar from './Calendar';
 export default function CalendarPage() {
   return (
     <PageContainer>
-      <Calendar />
+      <Calendar 
+      height="auto"
+      ContentHeight="auto"
+      />
     </PageContainer>
   );
 }
