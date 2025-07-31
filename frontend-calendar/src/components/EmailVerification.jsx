@@ -136,14 +136,15 @@ export default function EmailVerification() {
     setSuccess('');
 
     try {
-      const response = await fetch('http://localhost:8000/auth/verify-email/', {
+      const response = await fetch('http://localhost:8000/auth/verify-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${localStorage.getItem('access_token')}`
         },
         body: JSON.stringify({
-          verification_code: verificationCode
+          email: user.email,
+          code: verificationCode
         })
       });
 

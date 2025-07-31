@@ -60,8 +60,9 @@ export default function AuthProvider({ children }) {
 
   const verifyEmail = async (verificationCode) => {
     try {
-      const { data } = await api.post("/auth/verify-email/", {
-        verification_code: verificationCode
+      const { data } = await api.post("/auth/verify-email", {
+        email: user.email,
+        code: verificationCode
       });
       // Actualizar el usuario con el estado de verificación
       if (data.user) {
