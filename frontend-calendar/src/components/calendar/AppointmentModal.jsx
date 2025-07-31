@@ -218,8 +218,8 @@ const ToggleButtonGroup = styled.div`
 const ToggleButton = styled.button`
   flex: 1;
   padding: 0.5rem 1rem;
-  background-color: ${({ active, theme }) => active ? theme.colors.primary : theme.colors.surface};
-  color: ${({ active, theme }) => active ? '#fff' : theme.colors.text};
+  background-color: ${({ active, theme }) => active === "true" ? theme.colors.primary : theme.colors.surface};
+  color: ${({ active, theme }) => active === "true" ? '#fff' : theme.colors.text};
   border: none;
   font-family: ${({ theme }) => theme.fonts.body};
   font-size: 0.9rem;
@@ -227,7 +227,7 @@ const ToggleButton = styled.button`
   transition: all 0.2s;
   
   &:hover {
-    background-color: ${({ active, theme }) => active ? theme.colors.primary : theme.colors.backgroundHover};
+    background-color: ${({ active, theme }) => active === "true" ? theme.colors.primary : theme.colors.backgroundHover};
   }
   
   &:first-of-type {
@@ -617,14 +617,14 @@ export default function AppointmentModal({ isOpen, onClose, onSave, selectedSlot
                 <ToggleButtonGroup>
                   <ToggleButton 
                     type="button"
-                    active={formData.scheduleType === 'default'}
+                    active={formData.scheduleType === 'default' ? "true" : undefined}
                     onClick={() => setFormData({...formData, scheduleType: 'default'})}
                   >
                     Default
                   </ToggleButton>
                   <ToggleButton 
                     type="button"
-                    active={formData.scheduleType === 'custom'}
+                    active={formData.scheduleType === 'custom' ? "true" : undefined}
                     onClick={() => setFormData({...formData, scheduleType: 'custom'})}
                   >
                     Personalizado

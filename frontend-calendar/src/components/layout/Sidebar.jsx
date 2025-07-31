@@ -107,22 +107,22 @@ const NavItem = styled(Link)`
   align-items: center;
   padding: 0.8rem 1rem;
   text-decoration: none;
-  color: ${({ theme, active }) => active ? theme.colors.primary : theme.colors.text};
-  font-weight: ${({ active }) => active ? "600" : "500"};
+  color: ${({ theme, active }) => active === "true" ? theme.colors.primary : theme.colors.text};
+  font-weight: ${({ active }) => active === "true" ? "600" : "500"};
   font-size: 0.95rem;
   transition: all 0.2s ease;
   white-space: nowrap;
   border-radius: ${({ theme }) => theme.borderRadius.medium};
-  background-color: ${({ theme, active }) => active ? `${theme.colors.lightHover}` : 'transparent'};
+  background-color: ${({ theme, active }) => active === "true" ? `${theme.colors.lightHover}` : 'transparent'};
 
   &:hover {
-    background-color: ${({ theme, active }) => active ? theme.colors.lightHover : theme.colors.backgroundHover};
+    background-color: ${({ theme, active }) => active === "true" ? theme.colors.lightHover : theme.colors.backgroundHover};
   }
 
   svg {
     font-size: 1.3rem;
     margin-right: 1rem;
-    color: ${({ theme, active }) => active ? theme.colors.primary : theme.colors.textSecondary};
+    color: ${({ theme, active }) => active === "true" ? theme.colors.primary : theme.colors.textSecondary};
   }
 
   span {
@@ -170,7 +170,7 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
           <NavSectionTitle>Principal</NavSectionTitle>
           <NavItem 
             to="/dashboard" 
-            active={isActive('/dashboard')} 
+            active={isActive('/dashboard') ? "true" : undefined} 
             onClick={handleNavClick}
           >
             <MdDashboard />
@@ -178,7 +178,7 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
           </NavItem>
           <NavItem 
             to="/calendar" 
-            active={isActive('/calendar')} 
+            active={isActive('/calendar') ? "true" : undefined} 
             onClick={handleNavClick}
           >
             <MdCalendarToday />
@@ -186,7 +186,7 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
           </NavItem>
           <NavItem 
             to="/patients" 
-            active={isActive('/patients')} 
+            active={isActive('/patients') ? "true" : undefined} 
             onClick={handleNavClick}
           >
             <MdPeople />
@@ -196,7 +196,7 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
           <NavSectionTitle>Clínica</NavSectionTitle>
           <NavItem 
             to="/medical-records" 
-            active={isActive('/medical-records')} 
+            active={isActive('/medical-records') ? "true" : undefined} 
             onClick={handleNavClick}
           >
             <MdAssignment />
@@ -204,7 +204,7 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
           </NavItem>
           <NavItem 
             to="/treatments" 
-            active={isActive('/treatments')} 
+            active={isActive('/treatments') ? "true" : undefined} 
             onClick={handleNavClick}
           >
             <MdLocalHospital />
@@ -212,7 +212,7 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
           </NavItem>
           <NavItem 
             to="/billing" 
-            active={isActive('/billing')} 
+            active={isActive('/billing') ? "true" : undefined} 
             onClick={handleNavClick}
           >
             <MdPayment />
@@ -223,7 +223,7 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
         <ConfigSection>
           <NavItem 
             to="/settings" 
-            active={isActive('/settings')} 
+            active={isActive('/settings') ? "true" : undefined} 
             onClick={handleNavClick}
           >
             <MdSettings />
