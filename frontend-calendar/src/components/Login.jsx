@@ -24,7 +24,7 @@ function Login() {
       setEmail(savedEmail);
       setRememberMe(true);
     }
-  };
+  }, []);
 
   const handleGoogleSuccess = async (credentialResponse) => {
     try {
@@ -41,7 +41,7 @@ function Login() {
 
   const handleGoogleError = () => {
     setError("Error al iniciar sesión con Google");
-  };, []);
+  };
   
   // Redirigir si ya está autenticado
   useEffect(() => {
@@ -256,6 +256,23 @@ function Login() {
             {isLoading ? "Iniciando sesión..." : "Iniciar sesión"}
           </button>
         </form>
+        
+        <div css={dividerStyle}>
+          <span>o continúa con</span>
+        </div>
+        
+        <div css={googleButtonStyle}>
+          <GoogleLogin
+            onSuccess={handleGoogleSuccess}
+            onError={handleGoogleError}
+            text="signin_with"
+            shape="rectangular"
+            theme="outline"
+            size="large"
+            width="100%"
+          />
+        </div>
+        
         <p css={footerText}>
           ¿No tienes cuenta? <Link to="/register">Regístrate</Link>
         </p>

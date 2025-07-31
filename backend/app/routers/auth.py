@@ -6,6 +6,8 @@ from pydantic import BaseModel
 from typing import Optional
 import random
 import string
+import requests
+import json
 from ..database import get_db
 from ..models.models import User
 from ..schemas.schemas import UserRegister, UserRead
@@ -147,6 +149,9 @@ def verify_email(verify_data: VerifyEmailRequest, db: Session = Depends(get_db))
 class ResendCodeRequest(BaseModel):
     email: str
 
+class GoogleLoginRequest(BaseModel):
+    id_token: str
+
 @router.post("/resend-verification")
 def resend_verification_code(resend_data: ResendCodeRequest, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.email == resend_data.email).first()
@@ -166,3 +171,71 @@ def resend_verification_code(resend_data: ResendCodeRequest, db: Session = Depen
     print(f"Usuario: {user.first_name} {user.last_name}")
     
     return {"message": "Código de verificación reenviado"}
+
+@router.post("/google")
+def google_login(google_data: GoogleLoginRequest, db: Session = Depends(get_db)):
+    try:
+        # Verificar el token de Google
+        response = requests.get(
+            f"https://oauth2.googleapis.com/tokeninfo?id_token={google_data.id_token}"
+        )
+        
+        if response.status_code != 200:
+            raise HTTPException(status_code=400, detail="Token de Google inválido")
+        
+        google_user_info = response.json()
+        email = google_user_info.get("email")
+        first_name = google_user_info.get("given_name", "")
+        last_name = google_user_info.get("family_name", "")
+        
+        if not email:
+            raise HTTPException(status_code=400, detail="No se pudo obtener el email de Google")
+        
+        # Buscar usuario existente
+        user = db.query(User).filter(User.email == email).first()
+        
+        if not user:
+            # Crear nuevo usuario
+            user = User(
+                first_name=first_name,
+                last_name=last_name,
+                email=email,
+                hashed_password="",  # No password for Google users
+                is_verified=True,  # Google users are pre-verified
+                verification_code=None
+            )
+            db.add(user)
+            db.commit()
+            db.refresh(user)
+        else:
+            # Si el usuario existe pero no está verificado, verificarlo
+            if not user.is_verified:
+                user.is_verified = True
+                user.verification_code = None
+                db.commit()
+        
+        # Crear tokens
+        access_token = create_access_token(data={"sub": user.email})
+        refresh_token = create_access_token(
+            data={"sub": user.email, "refresh": True},
+            expires_delta=timedelta(days=30)
+        )
+        
+        return {
+            "access_token": access_token,
+            "token_type": "bearer",
+            "refresh_token": refresh_token,
+            "user": {
+                "id": user.id,
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                "email": user.email,
+                "is_verified": user.is_verified
+            }
+        }
+        
+    except requests.RequestException:
+        raise HTTPException(status_code=400, detail="Error al verificar token de Google")
+    except Exception as e:
+        print(f"Error en Google login: {e}")
+        raise HTTPException(status_code=500, detail="Error interno del servidor")
