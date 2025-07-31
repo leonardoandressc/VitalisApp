@@ -4,8 +4,13 @@ from sqlalchemy.orm import Session
 from datetime import timedelta
 from pydantic import BaseModel
 from typing import Optional
+import random
+import string
 from ..database import get_db
+from ..models.models import User
+from ..schemas.schemas import UserRegister, UserRead
 from ..utils.token_utils import authenticate_user, create_access_token
+from ..utils.password_utils import hash_password
 from ..config import ACCESS_TOKEN_EXPIRE_MINUTES
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -14,6 +19,39 @@ class LoginRequest(BaseModel):
     email: str
     password: str
     remember_me: Optional[bool] = False
+
+def generate_verification_code():
+    return ''.join(random.choices(string.digits, k=6))
+
+@router.post("/register", response_model=UserRead)
+def register(user_data: UserRegister, db: Session = Depends(get_db)):
+    # Verificar si el usuario ya existe
+    db_user = db.query(User).filter(User.email == user_data.email).first()
+    if db_user:
+        raise HTTPException(status_code=400, detail="El email ya está registrado")
+    
+    # Generar código de verificación
+    verification_code = generate_verification_code()
+    
+    # Crear nuevo usuario
+    new_user = User(
+        first_name=user_data.first_name,
+        last_name=user_data.last_name,
+        email=user_data.email,
+        hashed_password=hash_password(user_data.password),
+        is_verified=False,
+        verification_code=verification_code
+    )
+    
+    db.add(new_user)
+    db.commit()
+    db.refresh(new_user)
+    
+    # TODO: Enviar email con código de verificación
+    # Por ahora, solo devolvemos el usuario creado
+    print(f"Código de verificación para {user_data.email}: {verification_code}")
+    
+    return new_user
 
 @router.post("/login")
 def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
@@ -36,8 +74,10 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
         "refresh_token": refresh_token,
         "user": {
             "id": user.id,
-            "name": user.name,
-            "email": user.email
+            "first_name": user.first_name,
+            "last_name": user.last_name,
+            "email": user.email,
+            "is_verified": user.is_verified
         }
     }
 
@@ -63,8 +103,10 @@ def login_json(login_data: LoginRequest, db: Session = Depends(get_db)):
         "refresh_token": refresh_token,
         "user": {
             "id": user.id,
-            "name": user.name,
-            "email": user.email
+            "first_name": user.first_name,
+            "last_name": user.last_name,
+            "email": user.email,
+            "is_verified": user.is_verified
         }
     }
 
@@ -77,3 +119,45 @@ def refresh_token(refresh_token: str = Body(..., embed=True), db: Session = Depe
     new_access_token = create_access_token(data={"sub": "user@example.com"})
     
     return {"access_token": new_access_token, "token_type": "bearer"}
+
+class VerifyEmailRequest(BaseModel):
+    email: str
+    code: str
+
+@router.post("/verify-email")
+def verify_email(verify_data: VerifyEmailRequest, db: Session = Depends(get_db)):
+    user = db.query(User).filter(User.email == verify_data.email).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="Usuario no encontrado")
+    
+    if user.verification_code != verify_data.code:
+        raise HTTPException(status_code=400, detail="Código de verificación inválido")
+    
+    # Marcar como verificado
+    user.is_verified = True
+    user.verification_code = None
+    db.commit()
+    
+    return {"message": "Email verificado exitosamente"}
+
+class ResendCodeRequest(BaseModel):
+    email: str
+
+@router.post("/resend-verification")
+def resend_verification_code(resend_data: ResendCodeRequest, db: Session = Depends(get_db)):
+    user = db.query(User).filter(User.email == resend_data.email).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="Usuario no encontrado")
+    
+    if user.is_verified:
+        raise HTTPException(status_code=400, detail="El usuario ya está verificado")
+    
+    # Generar nuevo código
+    new_code = generate_verification_code()
+    user.verification_code = new_code
+    db.commit()
+    
+    # TODO: Enviar email con nuevo código
+    print(f"Nuevo código de verificación para {resend_data.email}: {new_code}")
+    
+    return {"message": "Código de verificación reenviado"}

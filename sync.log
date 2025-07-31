@@ -23281,3 +23281,24 @@ After doing this, you may fix the identity used for this commit with:
 To https://github.com/leonardoandressc/VitalisApp.git
    4bf4286..2f9908c  main -> main
 [Thu Jul 31 08:16:05 UTC 2025] Sincronizado con GitHub
+[main 6106ed9] Auto-commit: 2025-07-31 08:21:05
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 10 files changed, 36 insertions(+), 8 deletions(-)
+ create mode 100644 backend/app/__pycache__/config.cpython-312.pyc
+ create mode 100644 backend/app/routers/__pycache__/auth.cpython-312.pyc
+ create mode 100644 backend/app/utils/__pycache__/token_utils.cpython-312.pyc
+To https://github.com/leonardoandressc/VitalisApp.git
+   2f9908c..6106ed9  main -> main
+[Thu Jul 31 08:21:07 UTC 2025] Sincronizado con GitHub
