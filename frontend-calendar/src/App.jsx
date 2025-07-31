@@ -11,6 +11,7 @@ import CalendarPage from './components/calendar/CalendarPage';
 import Dashboard from './components/Dashboard';
 import AppLayout from './components/layout/AppLayout';
 import ProtectedRoute from './routes/ProtectedRoute';
+import ProfileSetupWrapper from './components/ProfileSetupWrapper';
 
 function App() {
   const [isDark, setIsDark] = useState(true);
@@ -34,7 +35,8 @@ function App() {
         `}
       />
       <AuthProvider>
-        <Routes>
+        <ProfileSetupWrapper>
+          <Routes>
           {/* Rutas públicas */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -107,7 +109,8 @@ function App() {
           
           {/* Ruta por defecto */}
           <Route path="*" element={<Navigate to="/login" replace />} />
-        </Routes>
+          </Routes>
+        </ProfileSetupWrapper>
       </AuthProvider>
     </ThemeProvider>
   );

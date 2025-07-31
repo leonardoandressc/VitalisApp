@@ -145,7 +145,7 @@ const LoadingSpinner = styled.div`
 `;
 
 const DoctorProfileForm = ({ onComplete }) => {
-  const { user } = useAuth();
+  const { user, updateProfileStatus } = useAuth();
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   
@@ -183,7 +183,11 @@ const DoctorProfileForm = ({ onComplete }) => {
   
   useEffect(() => {
     loadInitialData();
-  }, []);
+    // Pre-llenar el email del usuario
+    if (user && user.email) {
+      setFormData(prev => ({ ...prev, email: user.email }));
+    }
+  }, [user]);
   
   useEffect(() => {
     if (formData.specialty_id) {
@@ -293,6 +297,13 @@ const DoctorProfileForm = ({ onComplete }) => {
       };
       
       await api.post('/doctor-profile/', profileData);
+      
+      // Actualizar el estado del perfil en el contexto
+      updateProfileStatus({
+        has_profile: true,
+        profile_completed: true,
+        is_verified: false
+      });
       
       if (onComplete) {
         onComplete();

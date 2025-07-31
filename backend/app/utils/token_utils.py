@@ -1,10 +1,14 @@
 from datetime import datetime, timedelta
 from jose import jwt, JWTError
 from sqlalchemy.orm import Session
-from fastapi import HTTPException, status
+from fastapi import HTTPException, status, Depends
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from ..models.models import User
 from .password_utils import verify_password
 from ..config import SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES
+from ..database import get_db
+
+security = HTTPBearer()
 
 def authenticate_user(db: Session, email: str, password: str):
     user = db.query(User).filter(User.email == email).first()
@@ -34,7 +38,11 @@ def verify_token(token: str):
     except JWTError:
         return None
 
-def get_current_user(db: Session, token: str):
+def get_current_user(
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: Session = Depends(get_db)
+):
+    token = credentials.credentials
     payload = verify_token(token)
     if payload is None:
         raise HTTPException(

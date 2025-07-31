@@ -15,7 +15,7 @@ from ..schemas.schemas import (
     ServiceCreate, ServiceRead, ServiceSuggestion,
     ProfileVerificationUpdate
 )
-from ..utils.auth import get_current_user
+from ..utils.token_utils import get_current_user
 from sqlalchemy import or_
 
 router = APIRouter(prefix="/doctor-profile", tags=["doctor-profile"])
