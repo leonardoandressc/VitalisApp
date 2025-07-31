@@ -48,16 +48,9 @@ def register(user_data: UserRegister, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(new_user)
     
-    # Enviar email con código de verificación
-    email_sent = send_verification_email(
-        to_email=user_data.email,
-        verification_code=verification_code,
-        user_name=f"{user_data.first_name} {user_data.last_name}"
-    )
-    
-    if not email_sent:
-        print(f"Advertencia: No se pudo enviar el email de verificación a {user_data.email}")
-        print(f"Código de verificación para {user_data.email}: {verification_code}")
+    # Email temporalmente deshabilitado - mostrar código en consola
+    print(f"Código de verificación para {user_data.email}: {verification_code}")
+    print(f"Email: {user_data.email} - Usuario: {user_data.first_name} {user_data.last_name}")
     
     return new_user
 
@@ -146,11 +139,8 @@ def verify_email(verify_data: VerifyEmailRequest, db: Session = Depends(get_db))
     user.verification_code = None
     db.commit()
     
-    # Enviar email de bienvenida
-    send_welcome_email(
-        to_email=user.email,
-        user_name=f"{user.first_name} {user.last_name}"
-    )
+    # Email de bienvenida temporalmente deshabilitado
+    print(f"Usuario verificado exitosamente: {user.email}")
     
     return {"message": "Email verificado exitosamente"}
 
@@ -171,15 +161,8 @@ def resend_verification_code(resend_data: ResendCodeRequest, db: Session = Depen
     user.verification_code = new_code
     db.commit()
     
-    # Enviar email con nuevo código
-    email_sent = send_verification_email(
-        to_email=user.email,
-        verification_code=new_code,
-        user_name=f"{user.first_name} {user.last_name}"
-    )
-    
-    if not email_sent:
-        print(f"Advertencia: No se pudo enviar el email a {resend_data.email}")
-        print(f"Nuevo código de verificación para {resend_data.email}: {new_code}")
+    # Email temporalmente deshabilitado - mostrar código en consola
+    print(f"Nuevo código de verificación para {resend_data.email}: {new_code}")
+    print(f"Usuario: {user.first_name} {user.last_name}")
     
     return {"message": "Código de verificación reenviado"}
