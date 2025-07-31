@@ -16939,3 +16939,3523 @@ After doing this, you may fix the identity used for this commit with:
 To https://github.com/leonardoandressc/VitalisApp.git
    a463415..9f1b0a7  main -> main
 [Wed Jul 30 18:42:33 UTC 2025] Sincronizado con GitHub
+[main 9d7c261] Auto-commit: 2025-07-30 18:47:33
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   9f1b0a7..9d7c261  main -> main
+[Wed Jul 30 18:49:33 UTC 2025] Sincronizado con GitHub
+[main 238f342] Auto-commit: 2025-07-30 18:54:33
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+Missing or invalid credentials.
+Error: socket hang up
+    at Socket.socketOnEnd (node:_http_client:542:25)
+    at Socket.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'ECONNRESET'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 21:58:39 UTC 2025] Sincronizado con GitHub
+[main 5bbaeb9] Auto-commit: 2025-07-30 22:03:39
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 22:03:40 UTC 2025] Sincronizado con GitHub
+[main 5d6a394] Auto-commit: 2025-07-30 22:08:40
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 22:08:40 UTC 2025] Sincronizado con GitHub
+[main 8849a7a] Auto-commit: 2025-07-30 22:13:40
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 22:13:41 UTC 2025] Sincronizado con GitHub
+[main df3cda7] Auto-commit: 2025-07-30 22:18:41
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 22:18:41 UTC 2025] Sincronizado con GitHub
+[main 5bbc861] Auto-commit: 2025-07-30 22:23:41
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 22:23:41 UTC 2025] Sincronizado con GitHub
+[main 61c47c5] Auto-commit: 2025-07-30 22:28:41
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 22:28:42 UTC 2025] Sincronizado con GitHub
+[main eb827fe] Auto-commit: 2025-07-30 22:33:42
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 22:33:42 UTC 2025] Sincronizado con GitHub
+[main c42e90c] Auto-commit: 2025-07-30 22:38:42
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 22:38:43 UTC 2025] Sincronizado con GitHub
+[main 340a9bd] Auto-commit: 2025-07-30 22:43:43
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 22:43:43 UTC 2025] Sincronizado con GitHub
+[main 8d0797d] Auto-commit: 2025-07-30 22:48:43
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 22:48:43 UTC 2025] Sincronizado con GitHub
+[main 2f11c6e] Auto-commit: 2025-07-30 22:53:43
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 22:53:44 UTC 2025] Sincronizado con GitHub
+[main 4c7a09f] Auto-commit: 2025-07-30 22:58:44
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 22:58:44 UTC 2025] Sincronizado con GitHub
+[main 56f1d53] Auto-commit: 2025-07-30 23:03:44
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 23:03:45 UTC 2025] Sincronizado con GitHub
+[main 4caec1c] Auto-commit: 2025-07-30 23:08:45
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 23:08:45 UTC 2025] Sincronizado con GitHub
+[main 483851b] Auto-commit: 2025-07-30 23:13:45
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 23:13:45 UTC 2025] Sincronizado con GitHub
+[main e8a7ce9] Auto-commit: 2025-07-30 23:18:45
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 23:18:46 UTC 2025] Sincronizado con GitHub
+[main 5f48e9f] Auto-commit: 2025-07-30 23:23:46
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 23:23:46 UTC 2025] Sincronizado con GitHub
+[main a31b8cc] Auto-commit: 2025-07-30 23:28:46
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 23:28:47 UTC 2025] Sincronizado con GitHub
+[main 03fdeb0] Auto-commit: 2025-07-30 23:33:47
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 23:33:47 UTC 2025] Sincronizado con GitHub
+[main c8dfda3] Auto-commit: 2025-07-30 23:38:47
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 23:38:47 UTC 2025] Sincronizado con GitHub
+[main da1e7f4] Auto-commit: 2025-07-30 23:43:47
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 23:43:48 UTC 2025] Sincronizado con GitHub
+[main 8f868b4] Auto-commit: 2025-07-30 23:48:48
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 23:48:48 UTC 2025] Sincronizado con GitHub
+[main 73823b9] Auto-commit: 2025-07-30 23:53:48
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 23:53:48 UTC 2025] Sincronizado con GitHub
+[main 1d9a368] Auto-commit: 2025-07-30 23:58:48
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Wed Jul 30 23:58:49 UTC 2025] Sincronizado con GitHub
+[main 2701265] Auto-commit: 2025-07-31 00:03:49
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 00:03:49 UTC 2025] Sincronizado con GitHub
+[main ae35f68] Auto-commit: 2025-07-31 00:08:49
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 00:08:50 UTC 2025] Sincronizado con GitHub
+[main 7496b7a] Auto-commit: 2025-07-31 00:13:50
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 00:13:50 UTC 2025] Sincronizado con GitHub
+[main 3884a5f] Auto-commit: 2025-07-31 00:18:50
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 00:18:50 UTC 2025] Sincronizado con GitHub
+[main a3bdd21] Auto-commit: 2025-07-31 00:23:50
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 00:23:51 UTC 2025] Sincronizado con GitHub
+[main d2a7bb1] Auto-commit: 2025-07-31 00:28:51
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 00:28:51 UTC 2025] Sincronizado con GitHub
+[main e17a241] Auto-commit: 2025-07-31 00:33:51
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 00:33:52 UTC 2025] Sincronizado con GitHub
+[main 1b6788e] Auto-commit: 2025-07-31 00:38:52
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 00:38:52 UTC 2025] Sincronizado con GitHub
+[main f8e1257] Auto-commit: 2025-07-31 00:43:52
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 00:43:52 UTC 2025] Sincronizado con GitHub
+[main 1afbdb0] Auto-commit: 2025-07-31 00:48:53
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 00:48:53 UTC 2025] Sincronizado con GitHub
+[main 096b0a2] Auto-commit: 2025-07-31 00:53:53
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 00:53:53 UTC 2025] Sincronizado con GitHub
+[main 2521ea4] Auto-commit: 2025-07-31 00:58:53
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 00:58:54 UTC 2025] Sincronizado con GitHub
+[main 6117a47] Auto-commit: 2025-07-31 01:03:54
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 01:03:54 UTC 2025] Sincronizado con GitHub
+[main 51f9e76] Auto-commit: 2025-07-31 01:08:54
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 01:08:54 UTC 2025] Sincronizado con GitHub
+[main 5e491d4] Auto-commit: 2025-07-31 01:13:54
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 01:13:55 UTC 2025] Sincronizado con GitHub
+[main f849768] Auto-commit: 2025-07-31 01:18:55
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 01:18:55 UTC 2025] Sincronizado con GitHub
+[main 090d996] Auto-commit: 2025-07-31 01:23:55
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 01:23:55 UTC 2025] Sincronizado con GitHub
+[main 40cb803] Auto-commit: 2025-07-31 01:28:55
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 01:28:56 UTC 2025] Sincronizado con GitHub
+[main 4dcd65e] Auto-commit: 2025-07-31 01:33:56
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 01:33:56 UTC 2025] Sincronizado con GitHub
+[main 9404363] Auto-commit: 2025-07-31 01:38:56
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 01:38:57 UTC 2025] Sincronizado con GitHub
+[main 5b24101] Auto-commit: 2025-07-31 01:43:57
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 01:43:57 UTC 2025] Sincronizado con GitHub
+[main 5c0386b] Auto-commit: 2025-07-31 01:48:57
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 01:48:57 UTC 2025] Sincronizado con GitHub
+[main 93f0192] Auto-commit: 2025-07-31 01:53:58
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 01:53:58 UTC 2025] Sincronizado con GitHub
+[main cde5596] Auto-commit: 2025-07-31 01:58:58
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 01:58:58 UTC 2025] Sincronizado con GitHub
+[main bada2cc] Auto-commit: 2025-07-31 02:03:58
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 02:03:59 UTC 2025] Sincronizado con GitHub
+[main a94e62a] Auto-commit: 2025-07-31 02:08:59
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 02:08:59 UTC 2025] Sincronizado con GitHub
+[main b14a5f5] Auto-commit: 2025-07-31 02:13:59
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 02:13:59 UTC 2025] Sincronizado con GitHub
+[main 748ba60] Auto-commit: 2025-07-31 02:18:59
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 02:19:00 UTC 2025] Sincronizado con GitHub
+[main ceff577] Auto-commit: 2025-07-31 02:24:00
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 02:24:00 UTC 2025] Sincronizado con GitHub
+[main bc0ec2d] Auto-commit: 2025-07-31 02:29:00
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 02:29:01 UTC 2025] Sincronizado con GitHub
+[main 27d9967] Auto-commit: 2025-07-31 02:34:01
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 02:34:01 UTC 2025] Sincronizado con GitHub
+[main 85a69e6] Auto-commit: 2025-07-31 02:39:01
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 02:39:02 UTC 2025] Sincronizado con GitHub
+[main 9389353] Auto-commit: 2025-07-31 02:44:02
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 02:44:02 UTC 2025] Sincronizado con GitHub
+[main 5e251a0] Auto-commit: 2025-07-31 02:49:03
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 02:49:03 UTC 2025] Sincronizado con GitHub
+[main 5c82b10] Auto-commit: 2025-07-31 02:54:03
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 02:54:03 UTC 2025] Sincronizado con GitHub
+[main da4c2ae] Auto-commit: 2025-07-31 02:59:03
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 02:59:04 UTC 2025] Sincronizado con GitHub
+[main 3d5274e] Auto-commit: 2025-07-31 03:04:04
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 03:04:04 UTC 2025] Sincronizado con GitHub
+[main 85de620] Auto-commit: 2025-07-31 03:09:04
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 03:09:04 UTC 2025] Sincronizado con GitHub
+[main db654ab] Auto-commit: 2025-07-31 03:14:04
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 03:14:05 UTC 2025] Sincronizado con GitHub
+[main 58ec8a6] Auto-commit: 2025-07-31 03:19:05
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 03:19:05 UTC 2025] Sincronizado con GitHub
+[main d3f8542] Auto-commit: 2025-07-31 03:24:05
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 03:24:06 UTC 2025] Sincronizado con GitHub
+[main 798c958] Auto-commit: 2025-07-31 03:29:06
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 03:29:06 UTC 2025] Sincronizado con GitHub
+[main 1ec60e6] Auto-commit: 2025-07-31 03:34:06
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 03:34:06 UTC 2025] Sincronizado con GitHub
+[main c83b33e] Auto-commit: 2025-07-31 03:39:06
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 03:39:07 UTC 2025] Sincronizado con GitHub
+[main a07b612] Auto-commit: 2025-07-31 03:44:07
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 03:44:07 UTC 2025] Sincronizado con GitHub
+[main 114448c] Auto-commit: 2025-07-31 03:49:07
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 03:49:08 UTC 2025] Sincronizado con GitHub
+[main d28e332] Auto-commit: 2025-07-31 03:54:08
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 03:54:08 UTC 2025] Sincronizado con GitHub
+[main 1387c85] Auto-commit: 2025-07-31 03:59:08
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 03:59:08 UTC 2025] Sincronizado con GitHub
+[main 9aff4c8] Auto-commit: 2025-07-31 04:04:08
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 04:04:09 UTC 2025] Sincronizado con GitHub
+[main 8cc28e9] Auto-commit: 2025-07-31 04:09:09
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 04:09:09 UTC 2025] Sincronizado con GitHub
+[main 6adbe4b] Auto-commit: 2025-07-31 04:14:09
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 04:14:10 UTC 2025] Sincronizado con GitHub
+[main 0f5bea1] Auto-commit: 2025-07-31 04:19:10
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 04:19:10 UTC 2025] Sincronizado con GitHub
+[main 18bbf66] Auto-commit: 2025-07-31 04:24:10
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 04:24:10 UTC 2025] Sincronizado con GitHub
+[main b8ce01a] Auto-commit: 2025-07-31 04:29:10
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 04:29:11 UTC 2025] Sincronizado con GitHub
+[main af62676] Auto-commit: 2025-07-31 04:34:11
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 04:34:11 UTC 2025] Sincronizado con GitHub
+[main a943031] Auto-commit: 2025-07-31 04:39:11
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 04:39:11 UTC 2025] Sincronizado con GitHub
+[main 3eb6191] Auto-commit: 2025-07-31 04:44:11
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 04:44:12 UTC 2025] Sincronizado con GitHub
+[main 19032a6] Auto-commit: 2025-07-31 04:49:12
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 04:49:12 UTC 2025] Sincronizado con GitHub
+[main 06f468f] Auto-commit: 2025-07-31 04:54:12
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 04:54:12 UTC 2025] Sincronizado con GitHub
+[main 25ddc05] Auto-commit: 2025-07-31 04:59:13
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 04:59:13 UTC 2025] Sincronizado con GitHub
+[main afe8509] Auto-commit: 2025-07-31 05:04:13
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 05:04:13 UTC 2025] Sincronizado con GitHub
+[main 0da83a9] Auto-commit: 2025-07-31 05:09:13
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 05:09:14 UTC 2025] Sincronizado con GitHub
+[main a070840] Auto-commit: 2025-07-31 05:14:14
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 05:14:14 UTC 2025] Sincronizado con GitHub
+[main 3988299] Auto-commit: 2025-07-31 05:19:14
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 05:19:14 UTC 2025] Sincronizado con GitHub
+[main 9e50559] Auto-commit: 2025-07-31 05:24:15
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 05:24:15 UTC 2025] Sincronizado con GitHub
+[main 4f845b6] Auto-commit: 2025-07-31 05:29:15
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 05:29:15 UTC 2025] Sincronizado con GitHub
+[main efe4521] Auto-commit: 2025-07-31 05:34:15
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 05:34:16 UTC 2025] Sincronizado con GitHub
+[main 2544c32] Auto-commit: 2025-07-31 05:39:16
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 05:39:16 UTC 2025] Sincronizado con GitHub
+[main f4b16ad] Auto-commit: 2025-07-31 05:44:16
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/0/vscode-git-541ba02e08.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1636:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/0/vscode-git-541ba02e08.sock'
+}
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/leonardoandressc/VitalisApp.git/'
+[Thu Jul 31 05:44:17 UTC 2025] Sincronizado con GitHub
+[main 2ee98d5] Auto-commit: 2025-07-31 05:49:17
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 34 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   9d7c261..2ee98d5  main -> main
+[Thu Jul 31 05:49:20 UTC 2025] Sincronizado con GitHub
+[main 1c7bfeb] Auto-commit: 2025-07-31 05:54:20
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   2ee98d5..1c7bfeb  main -> main
+[Thu Jul 31 05:56:21 UTC 2025] Sincronizado con GitHub
+[main ce4c075] Auto-commit: 2025-07-31 06:01:21
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   1c7bfeb..ce4c075  main -> main
+[Thu Jul 31 06:01:42 UTC 2025] Sincronizado con GitHub
+[main 23c8e14] Auto-commit: 2025-07-31 06:06:42
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   ce4c075..23c8e14  main -> main
+[Thu Jul 31 06:06:43 UTC 2025] Sincronizado con GitHub
+[main a201581] Auto-commit: 2025-07-31 06:11:43
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   23c8e14..a201581  main -> main
+[Thu Jul 31 06:13:21 UTC 2025] Sincronizado con GitHub
+[main 4c96559] Auto-commit: 2025-07-31 06:18:21
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   a201581..4c96559  main -> main
+[Thu Jul 31 06:20:21 UTC 2025] Sincronizado con GitHub
+[main a41539c] Auto-commit: 2025-07-31 06:25:21
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   4c96559..a41539c  main -> main
+[Thu Jul 31 06:27:21 UTC 2025] Sincronizado con GitHub
+[main 64bec7d] Auto-commit: 2025-07-31 06:32:21
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   a41539c..64bec7d  main -> main
+[Thu Jul 31 06:34:21 UTC 2025] Sincronizado con GitHub
+[main 1b8f514] Auto-commit: 2025-07-31 06:39:21
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   64bec7d..1b8f514  main -> main
+[Thu Jul 31 06:41:21 UTC 2025] Sincronizado con GitHub
+[main 0b64f39] Auto-commit: 2025-07-31 06:46:21
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   1b8f514..0b64f39  main -> main
+[Thu Jul 31 06:48:21 UTC 2025] Sincronizado con GitHub
+[main 7b638f1] Auto-commit: 2025-07-31 06:53:21
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   0b64f39..7b638f1  main -> main
+[Thu Jul 31 06:55:21 UTC 2025] Sincronizado con GitHub
+[main ca49b45] Auto-commit: 2025-07-31 07:00:21
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   7b638f1..ca49b45  main -> main
+[Thu Jul 31 07:00:38 UTC 2025] Sincronizado con GitHub
+[main c5194e8] Auto-commit: 2025-07-31 07:05:39
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   ca49b45..c5194e8  main -> main
+[Thu Jul 31 07:05:40 UTC 2025] Sincronizado con GitHub
+[main d7cd17f] Auto-commit: 2025-07-31 07:10:40
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   c5194e8..d7cd17f  main -> main
+[Thu Jul 31 07:10:41 UTC 2025] Sincronizado con GitHub
+[main aa8e1f7] Auto-commit: 2025-07-31 07:15:41
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   d7cd17f..aa8e1f7  main -> main
+[Thu Jul 31 07:15:42 UTC 2025] Sincronizado con GitHub
+[main 12de998] Auto-commit: 2025-07-31 07:20:42
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   aa8e1f7..12de998  main -> main
+[Thu Jul 31 07:20:43 UTC 2025] Sincronizado con GitHub
+[main 01feb6f] Auto-commit: 2025-07-31 07:25:43
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 18 insertions(+)
+To https://github.com/leonardoandressc/VitalisApp.git
+   12de998..01feb6f  main -> main
+[Thu Jul 31 07:25:44 UTC 2025] Sincronizado con GitHub

@@ -63,6 +63,7 @@ const MobileViewControls = styled.div`
   @media (max-width: 480px) {
     display: block;
   }
+
 `;
 
 export default function CalendarToolbar({ 
