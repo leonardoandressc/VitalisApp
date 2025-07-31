@@ -11,6 +11,7 @@ from ..models.models import User
 from ..schemas.schemas import UserRegister, UserRead
 from ..utils.token_utils import authenticate_user, create_access_token
 from ..utils.password_utils import hash_password
+from ..utils.email_utils import send_verification_email, send_welcome_email
 from ..config import ACCESS_TOKEN_EXPIRE_MINUTES
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -47,9 +48,16 @@ def register(user_data: UserRegister, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(new_user)
     
-    # TODO: Enviar email con código de verificación
-    # Por ahora, solo devolvemos el usuario creado
-    print(f"Código de verificación para {user_data.email}: {verification_code}")
+    # Enviar email con código de verificación
+    email_sent = send_verification_email(
+        to_email=user_data.email,
+        verification_code=verification_code,
+        user_name=f"{user_data.first_name} {user_data.last_name}"
+    )
+    
+    if not email_sent:
+        print(f"Advertencia: No se pudo enviar el email de verificación a {user_data.email}")
+        print(f"Código de verificación para {user_data.email}: {verification_code}")
     
     return new_user
 
@@ -138,6 +146,12 @@ def verify_email(verify_data: VerifyEmailRequest, db: Session = Depends(get_db))
     user.verification_code = None
     db.commit()
     
+    # Enviar email de bienvenida
+    send_welcome_email(
+        to_email=user.email,
+        user_name=f"{user.first_name} {user.last_name}"
+    )
+    
     return {"message": "Email verificado exitosamente"}
 
 class ResendCodeRequest(BaseModel):
@@ -157,7 +171,15 @@ def resend_verification_code(resend_data: ResendCodeRequest, db: Session = Depen
     user.verification_code = new_code
     db.commit()
     
-    # TODO: Enviar email con nuevo código
-    print(f"Nuevo código de verificación para {resend_data.email}: {new_code}")
+    # Enviar email con nuevo código
+    email_sent = send_verification_email(
+        to_email=user.email,
+        verification_code=new_code,
+        user_name=f"{user.first_name} {user.last_name}"
+    )
+    
+    if not email_sent:
+        print(f"Advertencia: No se pudo enviar el email a {resend_data.email}")
+        print(f"Nuevo código de verificación para {resend_data.email}: {new_code}")
     
     return {"message": "Código de verificación reenviado"}
