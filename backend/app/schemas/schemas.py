@@ -119,3 +119,164 @@ class AvailabilityBlockOut(AvailabilityBlockCreate):
 
     class Config:
         from_attributes = True
+
+
+# Esquemas para Specialty
+class SpecialtyBase(BaseModel):
+    name: str
+    description: Optional[str] = None
+
+class SpecialtyCreate(SpecialtyBase):
+    pass
+
+class SpecialtyRead(SpecialtyBase):
+    id: int
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+# Esquemas para SubSpecialty
+class SubSpecialtyBase(BaseModel):
+    name: str
+    specialty_id: int
+    description: Optional[str] = None
+
+class SubSpecialtyCreate(SubSpecialtyBase):
+    pass
+
+class SubSpecialtyRead(SubSpecialtyBase):
+    id: int
+    created_at: datetime
+    specialty: Optional[SpecialtyRead] = None
+
+    class Config:
+        from_attributes = True
+
+
+# Esquemas para Insurance
+class InsuranceBase(BaseModel):
+    name: str
+    description: Optional[str] = None
+
+class InsuranceCreate(InsuranceBase):
+    pass
+
+class InsuranceRead(InsuranceBase):
+    id: int
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+# Esquemas para Clinic
+class ClinicBase(BaseModel):
+    name: str
+    address: Optional[str] = None
+    phone: Optional[str] = None
+    email: Optional[str] = None
+    website: Optional[str] = None
+
+class ClinicCreate(ClinicBase):
+    pass
+
+class ClinicRead(ClinicBase):
+    id: int
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+# Esquemas para Service
+class ServiceBase(BaseModel):
+    name: str
+    description: Optional[str] = None
+    price: Optional[str] = None
+    duration: Optional[int] = None  # en minutos
+
+class ServiceCreate(ServiceBase):
+    pass
+
+class ServiceRead(ServiceBase):
+    id: int
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+# Esquemas para DoctorProfile
+class DoctorProfileBase(BaseModel):
+    professional_license: str
+    phone: str
+    specialty_license: Optional[str] = None
+    office: Optional[str] = None
+    emergency_contact: Optional[str] = None
+    website: Optional[str] = None
+    specialty_id: Optional[int] = None
+    sub_specialty_id: Optional[int] = None
+    clinic_id: Optional[int] = None
+
+class DoctorProfileCreate(DoctorProfileBase):
+    service_ids: Optional[List[int]] = []
+    insurance_ids: Optional[List[int]] = []
+
+class DoctorProfileUpdate(BaseModel):
+    professional_license: Optional[str] = None
+    phone: Optional[str] = None
+    specialty_license: Optional[str] = None
+    office: Optional[str] = None
+    emergency_contact: Optional[str] = None
+    website: Optional[str] = None
+    specialty_id: Optional[int] = None
+    sub_specialty_id: Optional[int] = None
+    clinic_id: Optional[int] = None
+    service_ids: Optional[List[int]] = None
+    insurance_ids: Optional[List[int]] = None
+
+class DoctorProfileRead(DoctorProfileBase):
+    id: int
+    user_id: int
+    is_verified: bool
+    verification_notes: Optional[str] = None
+    verified_at: Optional[datetime] = None
+    verified_by: Optional[str] = None
+    created_at: datetime
+    updated_at: datetime
+    
+    # Relaciones
+    specialty: Optional[SpecialtyRead] = None
+    sub_specialty: Optional[SubSpecialtyRead] = None
+    clinic: Optional[ClinicRead] = None
+    services: List[ServiceRead] = []
+    insurances: List[InsuranceRead] = []
+
+    class Config:
+        from_attributes = True
+
+
+# Esquemas para verificación de perfil
+class ProfileVerificationUpdate(BaseModel):
+    is_verified: bool
+    verification_notes: Optional[str] = None
+    verified_by: str
+
+
+# Esquemas para respuestas de sugerencias
+class SpecialtySuggestion(BaseModel):
+    specialties: List[SpecialtyRead]
+
+class SubSpecialtySuggestion(BaseModel):
+    sub_specialties: List[SubSpecialtyRead]
+
+class InsuranceSuggestion(BaseModel):
+    insurances: List[InsuranceRead]
+
+class ServiceSuggestion(BaseModel):
+    services: List[ServiceRead]
+
+class ClinicSuggestion(BaseModel):
+    clinics: List[ClinicRead]
