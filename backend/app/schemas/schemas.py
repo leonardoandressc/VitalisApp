@@ -4,19 +4,25 @@ from typing import Optional, List, Literal
 from enum import Enum
 
 class UserBase(BaseModel):
-    name: str
+    first_name: str
+    last_name: str
     email: EmailStr
-    password: str 
 
 class UserCreate(UserBase):
-    pass
+    password: str
 
-from pydantic import BaseModel, EmailStr
+class UserRegister(BaseModel):
+    first_name: str
+    last_name: str
+    email: EmailStr
+    password: str
 
 class UserRead(BaseModel):
     id: int
-    name: str
+    first_name: str
+    last_name: str
     email: EmailStr
+    is_verified: bool
 
     class Config:
         orm_mode = True

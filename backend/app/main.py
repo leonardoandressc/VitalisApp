@@ -7,7 +7,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from app.database import engine, Base
-from app.routers import users, calendars, appointments, availability_slots, availability
+from app.routers import users, calendars, appointments, availability_slots, availability, auth
 
 Base.metadata.create_all(bind=engine)
 
@@ -15,7 +15,7 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # frontend
+    allow_origins=["http://localhost:5173", "http://localhost:5174"],  # frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -24,6 +24,7 @@ app.add_middleware(
 def root():
     return {"message": "Servidor FastAPI funcionando correctamente"}
 
+app.include_router(auth.router)
 app.include_router(users.router)
 app.include_router(calendars.router)
 app.include_router(appointments.router)
