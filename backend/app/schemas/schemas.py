@@ -25,7 +25,7 @@ class UserRead(BaseModel):
     is_verified: bool
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class CalendarCreate(BaseModel):
     name: str
@@ -37,7 +37,7 @@ class CalendarRead(BaseModel):
     description: Optional[str] = None
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class AvailabilitySlotBase(BaseModel):
     start_time: datetime
@@ -52,7 +52,7 @@ class AvailabilitySlotRead(AvailabilitySlotBase):
     calendar_id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class AppointmentBase(BaseModel):
     start_time: datetime
@@ -68,7 +68,7 @@ class AppointmentRead(AppointmentBase):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class WeeklyAvailabilityCreate(BaseModel):
     day_of_week: str  # Ej: "monday"
@@ -83,7 +83,7 @@ class AvailabilitySlotOut(BaseModel):
     is_booked: bool
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class WeekDay(str, Enum):
     mon = "mon"
@@ -106,7 +106,7 @@ class AvailabilityBlockOut(AvailabilityBlockBase):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class AvailabilityBlockCreate(BaseModel):
     day_of_week: Literal["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
@@ -118,4 +118,4 @@ class AvailabilityBlockOut(AvailabilityBlockCreate):
     calendar_id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
