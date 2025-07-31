@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from backend.app.database import get_db
-from backend.app.models.models import Calendar, User
-from backend.app.schemas.schemas import CalendarCreate, CalendarRead
-from backend.app.utils.slot_generator import generate_slots_for_calendar
+from ..database import get_db
+from ..models.models import Calendar, User
+from ..schemas.schemas import CalendarCreate, CalendarRead
+from ..utils.slot_generator import generate_slots_for_calendar
 
 router = APIRouter(prefix="/calendars", tags=["calendars"])
 

@@ -1,7 +1,13 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.app.database import engine, Base, get_db
-from backend.app.routers import users, calendars, appointments, availability_slots, availability
+import sys
+import os
+
+# Agregar el directorio raíz al path para importaciones absolutas
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from app.database import engine, Base
+from app.routers import users, calendars, appointments, availability_slots, availability
 
 Base.metadata.create_all(bind=engine)
 

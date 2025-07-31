@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta, time
-from backend.app.models.models import AvailabilitySlot, AvailabilityBlock
+from ..models.models import AvailabilitySlot, AvailabilityBlock
 from sqlalchemy.orm import Session
 
 def generate_slots_for_calendar(calendar, db: Session):

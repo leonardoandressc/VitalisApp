@@ -1,134 +1,236 @@
 /** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
-import { MdCalendarToday, MdPeople, MdSettings, MdChevronLeft, MdChevronRight } from "react-icons/md";
+import { 
+  MdCalendarToday, 
+  MdPeople, 
+  MdSettings, 
+  MdChevronLeft, 
+  MdChevronRight,
+  MdDashboard,
+  MdLocalHospital,
+  MdAssignment,
+  MdPayment
+} from "react-icons/md";
 import { useTheme } from "@emotion/react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { useState, useEffect } from "react";
-
+import { useEffect } from "react";
 
 const SidebarContainer = styled.aside`
-  height: 100vh; /* Cambiado de min-height */  width: ${({ collapsed }) => (collapsed ? "80px" : "240px")};
+  height: 100vh;
+  width: ${({ isOpen }) => (isOpen ? "240px" : "0")};
   background-color: ${({ theme }) => theme.colors.surface};
   color: ${({ theme }) => theme.colors.text};
   display: flex;
   flex-direction: column;
-  padding: 1.2rem 0;
-  transition: width 0.3s ease;
-  border-right: 1px solid ${({ theme }) => theme.colors.accent};
-  min-height: 100vh;
+  padding: ${({ isOpen }) => (isOpen ? "1.2rem 0" : "1.2rem 0")};
+  transition: all 0.3s ease;
+  border-right: 1px solid ${({ theme }) => theme.colors.border};
   position: relative;
-  box-sizing: border-box;
+  box-shadow: ${({ theme }) => theme.shadows.small};
+  overflow: hidden;
+  z-index: 100;
+  
+  @media (max-width: 768px) {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translateX(${({ isOpen }) => (isOpen ? "0" : "-100%")});
+    width: 240px;
+  }
 `;
 
-const ToggleButton = styled.button`
-  position: absolute;
-  top: 1rem;
-  right: ${({ collapsed }) => (collapsed ? "-1.2rem" : "-1.2rem")};
-  background: ${({ theme }) => theme.colors.accent};
-  color: ${({ theme }) => theme.colors.text};
-  border: none;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
+const Overlay = styled.div`
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 90;
+  transition: opacity 0.3s ease;
+  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
+  
+  @media (min-width: 769px) {
+    display: none;
+  }
+`;
+
+const LogoContainer = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
-  z-index: 10;
+  align-items: center;
+  padding: 0.5rem 1rem 2rem;
 `;
 
 const Logo = styled.img`
-  width: ${({ collapsed }) => (collapsed ? "40px" : "140px")};
-  margin: 0 auto 2rem auto;
-  transition: width 0.3s ease;
+  width: 140px;
+  height: auto;
+  transition: all 0.3s ease;
 `;
 
 const NavSection = styled.nav`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 0.5rem;
+  margin-top: 1rem;
   padding: 0 1rem;
+  overflow-y: auto;
+  
+  /* Ocultar scrollbar pero mantener funcionalidad */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const NavSectionTitle = styled.h3`
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  margin: 1.5rem 0 0.5rem;
+  padding: 0 0.5rem;
+  letter-spacing: 0.5px;
 `;
 
 const ConfigSection = styled.nav`
   padding: 1rem;
-  border-top: 1px solid ${({ theme }) => theme.colors.accent};
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
 `;
 
 const NavItem = styled(Link)`
   display: flex;
   align-items: center;
-  padding: 0.8rem ${({ collapsed }) => (collapsed ? "1.2rem" : "2rem")};
+  padding: 0.8rem 1rem;
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.text};
-  font-weight: 500;
-  font-size: 1rem;
-  transition: background 0.2s ease;
+  color: ${({ theme, active }) => active ? theme.colors.primary : theme.colors.text};
+  font-weight: ${({ active }) => active ? "600" : "500"};
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
   white-space: nowrap;
+  border-radius: ${({ theme }) => theme.borderRadius.medium};
+  background-color: ${({ theme, active }) => active ? `${theme.colors.lightHover}` : 'transparent'};
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.accent};
+    background-color: ${({ theme, active }) => active ? theme.colors.lightHover : theme.colors.backgroundHover};
   }
 
   svg {
-    font-size: 1.5rem;
-    margin-right: ${({ collapsed }) => (collapsed ? "0" : "1rem")};
-    transition: margin 0.3s ease;
+    font-size: 1.3rem;
+    margin-right: 1rem;
+    color: ${({ theme, active }) => active ? theme.colors.primary : theme.colors.textSecondary};
   }
 
   span {
-    display: ${({ collapsed }) => (collapsed ? "none" : "inline")};
     transition: opacity 0.2s ease;
   }
 `;
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, toggleSidebar }) {
   const theme = useTheme();
-  const [collapsed, setCollapsed] = useState(false);
+  const location = useLocation();
 
-  // Cerrar sidebar si pantalla es pequeña (ej: < 768px)
+  // Cerrar sidebar al hacer clic en un enlace en dispositivos móviles
+  const handleNavClick = () => {
+    if (window.innerWidth < 768) {
+      toggleSidebar();
+    }
+  };
+
+  // Prevenir scroll del body cuando el sidebar está abierto en móvil
   useEffect(() => {
-    const handleResize = () => {
-      setCollapsed(window.innerWidth < 768);
+    if (isOpen && window.innerWidth < 768) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'auto';
     };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [isOpen]);
+
+  const isActive = (path) => {
+    return location.pathname === path || location.pathname.startsWith(`${path}/`);
+  };
 
   return (
-    <SidebarContainer collapsed={collapsed}>
-      <ToggleButton
-        onClick={() => setCollapsed((prev) => !prev)}
-        collapsed={collapsed}
-        aria-label="Toggle Sidebar"
-      >
-        {collapsed ? <MdChevronRight /> : <MdChevronLeft />}
-      </ToggleButton>
+    <>
+      <Overlay isOpen={isOpen && window.innerWidth < 768} onClick={toggleSidebar} />
+      <SidebarContainer isOpen={isOpen}>
+        <LogoContainer>
+          <Logo src={logo} alt="Vitalis Logo" />
+        </LogoContainer>
 
-      <Logo src={logo} alt="Vitalis Logo" collapsed={collapsed} />
+        <NavSection>
+          <NavSectionTitle>Principal</NavSectionTitle>
+          <NavItem 
+            to="/dashboard" 
+            active={isActive('/dashboard')} 
+            onClick={handleNavClick}
+          >
+            <MdDashboard />
+            <span>Dashboard</span>
+          </NavItem>
+          <NavItem 
+            to="/calendar" 
+            active={isActive('/calendar')} 
+            onClick={handleNavClick}
+          >
+            <MdCalendarToday />
+            <span>Calendario</span>
+          </NavItem>
+          <NavItem 
+            to="/patients" 
+            active={isActive('/patients')} 
+            onClick={handleNavClick}
+          >
+            <MdPeople />
+            <span>Pacientes</span>
+          </NavItem>
+          
+          <NavSectionTitle>Clínica</NavSectionTitle>
+          <NavItem 
+            to="/medical-records" 
+            active={isActive('/medical-records')} 
+            onClick={handleNavClick}
+          >
+            <MdAssignment />
+            <span>Historias Clínicas</span>
+          </NavItem>
+          <NavItem 
+            to="/treatments" 
+            active={isActive('/treatments')} 
+            onClick={handleNavClick}
+          >
+            <MdLocalHospital />
+            <span>Tratamientos</span>
+          </NavItem>
+          <NavItem 
+            to="/billing" 
+            active={isActive('/billing')} 
+            onClick={handleNavClick}
+          >
+            <MdPayment />
+            <span>Facturación</span>
+          </NavItem>
+        </NavSection>
 
-      <NavSection>
-        <NavItem to="/calendar" collapsed={collapsed}>
-          <MdCalendarToday />
-          <span>Calendario</span>
-        </NavItem>
-        <NavItem to="/crm" collapsed={collapsed}>
-          <MdPeople />
-          <span>CRM</span>
-        </NavItem>
-      </NavSection>
-
-      <ConfigSection>
-        <NavItem to="/settings" collapsed={collapsed}>
-          <MdSettings />
-          <span>Configuración</span>
-        </NavItem>
-      </ConfigSection>
-    </SidebarContainer>
+        <ConfigSection>
+          <NavItem 
+            to="/settings" 
+            active={isActive('/settings')} 
+            onClick={handleNavClick}
+          >
+            <MdSettings />
+            <span>Configuración</span>
+          </NavItem>
+        </ConfigSection>
+      </SidebarContainer>
+    </>
   );
 }

@@ -30,9 +30,19 @@ export default function AuthProvider({ children }) {
     api.defaults.headers.common.Authorization = `Bearer ${access_token}`;
   };
 
-  const login = async (email, password) => {
-    const { data } = await api.post("/auth/login", { email, password });
-    saveSession(data);
+  const login = async (email, password, rememberMe = false) => {
+    try {
+      const { data } = await api.post("/auth/login/json", { 
+        email, 
+        password,
+        remember_me: rememberMe 
+      });
+      saveSession(data);
+      return data;
+    } catch (error) {
+      console.error("Error en login:", error);
+      throw error;
+    }
   };
 
   const register = async (payload) => {

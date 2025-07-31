@@ -3,11 +3,11 @@ from pydantic import BaseModel
 from datetime import date, datetime, timedelta
 from sqlalchemy.orm import Session
 from typing import List
-from backend.app.database import get_db
-from backend.app.schemas.schemas import AvailabilityBlockCreate, AvailabilityBlockOut
-from backend.app import models
-from backend.app.models.models import Calendar, AvailabilitySlot
-from backend.app.utils.slot_generator import generate_slots_for_calendar
+from ..database import get_db
+from ..schemas.schemas import AvailabilityBlockCreate, AvailabilityBlockOut
+from .. import models
+from ..models.models import Calendar, AvailabilitySlot
+from ..utils.slot_generator import generate_slots_for_calendar
 
 
 router = APIRouter(prefix="/availability", tags=["Availability"])

@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from typing import List
-from backend.app.database import get_db
-from backend.app.models.models import AvailabilitySlot, Calendar
-from backend.app.schemas.schemas import AvailabilitySlotCreate, AvailabilitySlotRead, AvailabilitySlotOut
+from ..database import get_db
+from ..models.models import AvailabilitySlot, Calendar
+from ..schemas.schemas import AvailabilitySlotCreate, AvailabilitySlotRead, AvailabilitySlotOut
 
 router = APIRouter(prefix="/availability_slots", tags=["availability_slots"])
 

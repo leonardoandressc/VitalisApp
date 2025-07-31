@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import styled from '@emotion/styled';
 import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -9,12 +9,19 @@ import esLocale from '@fullcalendar/core/locales/es';
 import CalendarToolbar from './CalendarToolbar';
 import CalendarSidebar from './CalendarSidebar';
 import { useTheme } from '@emotion/react';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
+import { MdAdd } from 'react-icons/md';
+import AppointmentModal from './AppointmentModal';
+import FloatingActionButton from '../ui/FloatingActionButton';
 
 const CalendarContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   background: ${({ theme }) => theme.colors.background};
+  border-radius: ${({ theme }) => theme.borderRadius.medium};
+  overflow: hidden;
+  box-shadow: ${({ theme }) => theme.shadows.small};
 `;
 
 const HeaderWrapper = styled.header`
@@ -28,6 +35,7 @@ const ContentWrapper = styled.div`
   display: flex;
   flex: 1;
   overflow: hidden;
+  position: relative;
 `;
 
 const MainContent = styled.main`
@@ -55,58 +63,183 @@ const CalendarWrapper = styled.div`
   .fc-view-harness {
     height: 100% !important;
   }
+  
+  /* Estilos personalizados para FullCalendar */
+  .fc-theme-standard .fc-scrollgrid {
+    border-color: ${({ theme }) => theme.colors.border};
+  }
+  
+  .fc-theme-standard td, .fc-theme-standard th {
+    border-color: ${({ theme }) => theme.colors.border};
+  }
+  
+  .fc-timegrid-slot-minor {
+    border-top-style: dotted;
+  }
+  
+  .fc-timegrid-now-indicator-line {
+    border-color: ${({ theme }) => theme.colors.primary};
+  }
+  
+  .fc-timegrid-now-indicator-arrow {
+    border-color: ${({ theme }) => theme.colors.primary};
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+  }
+  
+  .fc-col-header-cell {
+    background-color: ${({ theme }) => theme.colors.backgroundAlt};
+    padding: 0.75rem 0;
+  }
+  
+  .fc-day-today {
+    background-color: ${({ theme }) => theme.colors.lightHover} !important;
+  }
+`;
+
+const FloatingActionButton = styled.button`
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: ${({ theme }) => theme.shadows.medium};
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 50;
+  
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.secondary};
+    transform: scale(1.05);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+  
+  svg {
+    font-size: 24px;
+  }
+  
+  @media (min-width: 769px) {
+    display: none;
+  }
 `;
 export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [currentView, setCurrentView] = useState('timeGridWeek');
+  const [showAppointmentModal, setShowAppointmentModal] = useState(false);
+  const [selectedSlot, setSelectedSlot] = useState(null);
+  const [showSidebar, setShowSidebar] = useState(true);
   const calendarRef = useRef(null);
   const lastHandledDate = useRef(new Date());
   const theme = useTheme();
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  
+  // Eventos de ejemplo
+  const [events, setEvents] = useState([
+    {
+      id: '1',
+      title: 'Consulta - Juan Pérez',
+      start: new Date(new Date().setHours(10, 0, 0)),
+      end: new Date(new Date().setHours(10, 30, 0)),
+      backgroundColor: theme.colors.primary,
+      borderColor: theme.colors.primary,
+      extendedProps: {
+        patient: 'Juan Pérez',
+        status: 'confirmed',
+        type: 'consultation'
+      }
+    },
+    {
+      id: '2',
+      title: 'Revisión - María López',
+      start: new Date(new Date().setHours(14, 0, 0)),
+      end: new Date(new Date().setHours(14, 45, 0)),
+      backgroundColor: theme.colors.secondary,
+      borderColor: theme.colors.secondary,
+      extendedProps: {
+        patient: 'María López',
+        status: 'confirmed',
+        type: 'checkup'
+      }
+    },
+    {
+      id: '3',
+      title: 'Tratamiento - Carlos Ruiz',
+      start: new Date(new Date().setDate(new Date().getDate() + 1)).setHours(11, 0, 0),
+      end: new Date(new Date().setDate(new Date().getDate() + 1)).setHours(12, 0, 0),
+      backgroundColor: theme.colors.info,
+      borderColor: theme.colors.info,
+      extendedProps: {
+        patient: 'Carlos Ruiz',
+        status: 'pending',
+        type: 'treatment'
+      }
+    }
+  ]);
+
+  // Ajustar sidebar según el tamaño de pantalla
+  useEffect(() => {
+    setShowSidebar(!isMobile);
+  }, [isMobile]);
 
   const calendarStyles = {
-  '.fc': {
-    fontFamily: "'Roboto', sans-serif",
-    fontSize: '14px',
-    color: theme.colors.text,
-    '.fc-scroller': {
-    overflow: 'hidden !important',
-  },
-  '.fc-scroller-liquid-absolute': {
-    overflow: 'hidden !important',
-  },
-  '.fc-view-harness': {
-    overflow: 'hidden !important',
-  },
-  },
-  '.fc-timegrid-slot-label, .fc-col-header-cell': {
-    backgroundColor: theme.colors.background,
-    color: theme.colors.textSecondary,
-    fontWeight: 500,
-  },
-  '.fc-scrollgrid': {
-    borderColor: theme.colors.border,
-  },
-  '.fc-daygrid-day-number': {
-    color: theme.colors.primary,
-  },
-  '.fc-timegrid-slot': {
-    backgroundColor: theme.colors.surface,
-  },
-  '.fc-event': {
-    backgroundColor: theme.colors.secondary,
-    border: 'none',
-    borderRadius: '6px',
-    padding: '2px 4px',
-    color: '#fff',
-    fontSize: '12px',
-  },
-  '.fc-timegrid-now-indicator-arrow': {
-    borderColor: theme.colors.primary,
-  },
-  '.fc-timegrid-now-indicator-line': {
-    backgroundColor: theme.colors.primary,
-  },
-};
+    '.fc': {
+      fontFamily: theme.fonts.body,
+      fontSize: '14px',
+      color: theme.colors.text,
+      '.fc-scroller': {
+        overflow: 'hidden !important',
+      },
+      '.fc-scroller-liquid-absolute': {
+        overflow: 'hidden !important',
+      },
+      '.fc-view-harness': {
+        overflow: 'hidden !important',
+      },
+    },
+    '.fc-timegrid-slot-label, .fc-col-header-cell': {
+      backgroundColor: theme.colors.backgroundAlt,
+      color: theme.colors.textSecondary,
+      fontWeight: 500,
+    },
+    '.fc-scrollgrid': {
+      borderColor: theme.colors.border,
+    },
+    '.fc-daygrid-day-number': {
+      color: theme.colors.primary,
+    },
+    '.fc-timegrid-slot': {
+      backgroundColor: theme.colors.surface,
+    },
+    '.fc-event': {
+      backgroundColor: theme.colors.secondary,
+      border: 'none',
+      borderRadius: '6px',
+      padding: '4px 6px',
+      color: '#fff',
+      fontSize: '12px',
+      cursor: 'pointer',
+      transition: 'transform 0.1s ease',
+      '&:hover': {
+        transform: 'scale(1.02)',
+      }
+    },
+    '.fc-timegrid-now-indicator-arrow': {
+      borderColor: theme.colors.primary,
+    },
+    '.fc-timegrid-now-indicator-line': {
+      backgroundColor: theme.colors.primary,
+    },
+  };
 
   const handleDateChange = useCallback((newDate) => {
     const date = new Date(newDate);
@@ -147,6 +280,63 @@ export default function Calendar() {
       setCurrentDate(newDate);
     }
   }, []);
+  
+  // Manejar clic en evento
+  const handleEventClick = useCallback((info) => {
+    // Abrir modal con la información del evento seleccionado
+    setSelectedSlot({
+      start: info.event.start,
+      end: info.event.end,
+      event: info.event
+    });
+    setShowAppointmentModal(true);
+  }, []);
+  
+  // Manejar selección de slot
+  const handleDateSelect = useCallback((info) => {
+    setSelectedSlot({
+      start: info.start,
+      end: info.end
+    });
+    setShowAppointmentModal(true);
+  }, []);
+  
+  // Cerrar modal
+  const handleCloseModal = useCallback(() => {
+    setShowAppointmentModal(false);
+    setSelectedSlot(null);
+  }, []);
+  
+  // Guardar cita
+  const handleSaveAppointment = useCallback((appointmentData) => {
+    // Si es una edición, actualizar el evento existente
+    if (selectedSlot && selectedSlot.event) {
+      const updatedEvents = events.map(event => {
+        if (event.id === selectedSlot.event.id) {
+          return {
+            ...event,
+            ...appointmentData
+          };
+        }
+        return event;
+      });
+      setEvents(updatedEvents);
+    } else {
+      // Si es una nueva cita, agregar a la lista de eventos
+      const newEvent = {
+        id: String(Date.now()),
+        ...appointmentData
+      };
+      setEvents([...events, newEvent]);
+    }
+    
+    handleCloseModal();
+  }, [events, selectedSlot]);
+  
+  // Alternar sidebar en móvil
+  const toggleSidebar = useCallback(() => {
+    setShowSidebar(prev => !prev);
+  }, []);
 
   return (
     <CalendarContainer>
@@ -158,6 +348,15 @@ export default function Calendar() {
           onToday={handleToday}
           currentView={currentView}
           onViewChange={handleViewChange}
+          onNewAppointment={() => {
+            setSelectedSlot({
+              start: new Date(),
+              end: new Date(new Date().setHours(new Date().getHours() + 1))
+            });
+            setShowAppointmentModal(true);
+          }}
+          toggleSidebar={toggleSidebar}
+          showSidebar={showSidebar}
         />
       </HeaderWrapper>
 
@@ -179,8 +378,18 @@ export default function Calendar() {
               dayMaxEvents={true}
               slotMinTime="07:00:00"
               slotMaxTime="22:00:00"
-              slotDuration="01:00:00"
+              slotDuration="00:30:00"
               expandRows={true}
+              selectable={true}
+              selectMirror={true}
+              select={handleDateSelect}
+              eventClick={handleEventClick}
+              events={events}
+              eventTimeFormat={{
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false,
+              }}
               slotLabelFormat={{
                 hour: '2-digit',
                 minute: '2-digit',
@@ -198,18 +407,43 @@ export default function Calendar() {
               height="100%"
               {...calendarStyles}
             />
-
           </CalendarWrapper>
         </MainContent>
 
-        <CalendarSidebar 
-          currentDate={currentDate} 
-          onDateChange={(date) => {
-            handleDateChange(date);
-            handleViewChange('timeGridDay');
-          }} 
-        />
+        {showSidebar && (
+          <CalendarSidebar 
+            currentDate={currentDate} 
+            onDateChange={(date) => {
+              handleDateChange(date);
+              handleViewChange('timeGridDay');
+            }} 
+          />
+        )}
       </ContentWrapper>
+      
+      {/* Botón flotante para agregar cita (solo en móvil) */}
+      <FloatingActionButton 
+        onClick={() => {
+          setSelectedSlot({
+            start: new Date(),
+            end: new Date(new Date().setHours(new Date().getHours() + 1))
+          });
+          setShowAppointmentModal(true);
+        }}
+        aria-label="Nueva cita"
+      >
+        <MdAdd />
+      </FloatingActionButton>
+      
+      {/* Modal para agendar/editar cita */}
+      {showAppointmentModal && (
+        <AppointmentModal 
+          isOpen={showAppointmentModal}
+          onClose={handleCloseModal}
+          onSave={handleSaveAppointment}
+          selectedSlot={selectedSlot}
+        />
+      )}
     </CalendarContainer>
   );
 }
