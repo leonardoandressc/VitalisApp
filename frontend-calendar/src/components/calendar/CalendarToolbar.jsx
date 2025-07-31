@@ -33,7 +33,6 @@ const ViewControls = styled.div`
   display: flex;
   background: ${({ theme }) => theme.colors.light};
   border-radius: 8px;
-  overflow: hidden;
 `;
 
 export default function CalendarToolbar({ 

@@ -108,6 +108,7 @@ export default function Calendar() {
   },
 };
 
+    // Función para cambiar fecha
   const handleDateChange = useCallback((newDate) => {
     const date = new Date(newDate);
     if (date.getTime() !== lastHandledDate.current.getTime()) {
@@ -122,6 +123,7 @@ export default function Calendar() {
     }
   }, []);
 
+  // Función para cambiar vista
   const handleViewChange = useCallback((view) => {
     setCurrentView(view);
     if (calendarRef.current) {
@@ -129,6 +131,7 @@ export default function Calendar() {
     }
   }, []);
 
+  // Navegación entre fechas
   const navigate = useCallback((amount) => {
     if (!calendarRef.current) return;
     const api = calendarRef.current.getApi();
@@ -136,10 +139,12 @@ export default function Calendar() {
     handleDateChange(api.getDate());
   }, [handleDateChange]);
 
+  // Manejar el botón "Hoy"
   const handleToday = useCallback(() => {
     handleDateChange(new Date());
   }, [handleDateChange]);
 
+  // Manejar el evento de cambio de fechas
   const handleDatesSet = useCallback(({ view }) => {
     const newDate = view.currentStart;
     if (newDate.getTime() !== lastHandledDate.current.getTime()) {
