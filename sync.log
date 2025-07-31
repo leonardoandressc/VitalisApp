@@ -23433,3 +23433,22 @@ After doing this, you may fix the identity used for this commit with:
 To https://github.com/leonardoandressc/VitalisApp.git
    bd93e5b..9d0e3cc  main -> main
 [Thu Jul 31 08:56:16 UTC 2025] Sincronizado con GitHub
+[main f57992f] Auto-commit: 2025-07-31 09:01:16
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 8 files changed, 153 insertions(+), 7 deletions(-)
+ create mode 100644 frontend-calendar/src/components/ProfileSetupWrapper.jsx
+To https://github.com/leonardoandressc/VitalisApp.git
+   9d0e3cc..f57992f  main -> main
+[Thu Jul 31 09:01:17 UTC 2025] Sincronizado con GitHub
