@@ -14,7 +14,7 @@ SMTP_USERNAME = os.getenv("SMTP_USERNAME")
 SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
 SMTP_FROM_EMAIL = os.getenv("SMTP_FROM_EMAIL")
 SMTP_FROM_NAME = os.getenv("SMTP_FROM_NAME", "Sistema de Calendario Médico")
-APP_NAME = os.getenv("APP_NAME", "Sistema de Calendario Médico")
+APP_NAME = os.getenv("APP_NAME", "Vitalis Stream")
 APP_URL = os.getenv("APP_URL", "http://localhost:5175")
 
 def send_email(to_email: str, subject: str, html_content: str, text_content: Optional[str] = None) -> bool:

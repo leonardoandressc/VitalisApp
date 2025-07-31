@@ -171,12 +171,15 @@ export default function EmailVerification() {
     setSuccess('');
 
     try {
-      const response = await fetch('http://localhost:8000/auth/resend-verification/', {
+      const response = await fetch('http://localhost:8000/auth/resend-verification', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${localStorage.getItem('access_token')}`
-        }
+        },
+        body: JSON.stringify({
+          email: user.email
+        })
       });
 
       const data = await response.json();

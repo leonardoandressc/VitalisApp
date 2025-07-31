@@ -77,7 +77,9 @@ export default function AuthProvider({ children }) {
 
   const resendVerificationCode = async () => {
     try {
-      const { data } = await api.post("/auth/resend-verification/");
+      const { data } = await api.post("/auth/resend-verification", {
+        email: user.email
+      });
       return data;
     } catch (error) {
       console.error("Error al reenviar código:", error);
