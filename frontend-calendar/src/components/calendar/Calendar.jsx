@@ -97,41 +97,7 @@ const CalendarWrapper = styled.div`
   }
 `;
 
-const FloatingActionButton = styled.button`
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  box-shadow: ${({ theme }) => theme.shadows.medium};
-  cursor: pointer;
-  transition: all 0.2s ease;
-  z-index: 50;
-  
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.secondary};
-    transform: scale(1.05);
-  }
-  
-  &:active {
-    transform: scale(0.95);
-  }
-  
-  svg {
-    font-size: 24px;
-  }
-  
-  @media (min-width: 769px) {
-    display: none;
-  }
-`;
+// Usando el componente importado FloatingActionButton en lugar de redefinirlo
 export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [currentView, setCurrentView] = useState('timeGridWeek');

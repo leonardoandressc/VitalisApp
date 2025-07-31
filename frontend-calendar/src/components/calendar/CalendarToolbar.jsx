@@ -103,15 +103,15 @@ export default function CalendarToolbar({
 
       <NavSection>
         <ViewControls>
-          <ViewButton active={currentView === 'timeGridDay'} onClick={() => onViewChange('timeGridDay')}>
+          <ViewButton active={currentView === 'timeGridDay' ? "true" : undefined} onClick={() => onViewChange('timeGridDay')}>
             <MdViewDay size={16} />
             Día
           </ViewButton>
-          <ViewButton active={currentView === 'timeGridWeek'} onClick={() => onViewChange('timeGridWeek')}>
+          <ViewButton active={currentView === 'timeGridWeek' ? "true" : undefined} onClick={() => onViewChange('timeGridWeek')}>
             <MdViewWeek size={16} />
             Semana
           </ViewButton>
-          <ViewButton active={currentView === 'dayGridMonth'} onClick={() => onViewChange('dayGridMonth')}>
+          <ViewButton active={currentView === 'dayGridMonth' ? "true" : undefined} onClick={() => onViewChange('dayGridMonth')}>
             <MdDateRange size={16} />
             Mes
           </ViewButton>

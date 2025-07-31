@@ -36,7 +36,6 @@ class Calendar(Base):
     owner = relationship("User", back_populates="calendars")
     availability_slots = relationship("AvailabilitySlot", back_populates="calendar")
     appointments = relationship("Appointment", back_populates="calendar")
-    availability_blocks = relationship("AvailabilityBlock", back_populates="calendar", cascade="all, delete")
     availability_blocks = relationship("AvailabilityBlock", back_populates="calendar", cascade="all, delete-orphan")
 
 

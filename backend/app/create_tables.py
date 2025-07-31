@@ -1,5 +1,5 @@
-from backend.app.database import engine, Base
-from backend.app.models.models import User, Calendar, AvailabilitySlot, Appointment, WeeklyAvailability
+from app.database import engine, Base
+from app.models.models import User, Calendar, AvailabilitySlot, Appointment, AvailabilityBlock, WeekDay
 
 # Crear las tablas en la base de datos
 Base.metadata.create_all(bind=engine)

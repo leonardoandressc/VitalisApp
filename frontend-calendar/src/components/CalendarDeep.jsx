@@ -85,9 +85,9 @@ const ViewButton = styled.button`
   font-weight: 500;
   cursor: pointer;
   background: ${({ active, theme }) => 
-    active ? theme.colors.primary : 'transparent'};
+    active === "true" ? theme.colors.primary : 'transparent'};
   color: ${({ active, theme }) => 
-    active ? 'white' : theme.colors.text};
+    active === "true" ? 'white' : theme.colors.text};
   
   svg {
     margin-right: 0.25rem;
@@ -178,14 +178,14 @@ export default function AppleStyleCalendar() {
 
         <ViewControls>
           <ViewButton 
-            active={currentView === 'timeGridDay'}
+            active={currentView === 'timeGridDay' ? "true" : undefined}
             onClick={() => handleViewChange('timeGridDay')}
           >
             <MdViewDay size={16} />
             Día
           </ViewButton>
           <ViewButton 
-            active={currentView === 'timeGridWeek'}
+            active={currentView === 'timeGridWeek' ? "true" : undefined}
             onClick={() => handleViewChange('timeGridWeek')}
           >
             <MdViewWeek size={16} />
