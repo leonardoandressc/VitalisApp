@@ -65,10 +65,9 @@ export default function AuthProvider({ children }) {
         code: verificationCode
       });
       // Actualizar el usuario con el estado de verificación
-      if (data.user) {
-        setUser(data.user);
-        localStorage.setItem("user", JSON.stringify(data.user));
-      }
+      const updatedUser = { ...user, is_verified: true };
+      setUser(updatedUser);
+      localStorage.setItem("user", JSON.stringify(updatedUser));
       return data;
     } catch (error) {
       console.error("Error en verificación de email:", error);

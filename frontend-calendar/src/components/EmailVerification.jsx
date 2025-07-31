@@ -119,7 +119,7 @@ export default function EmailVerification() {
     // Si no hay usuario o ya está verificado, redirigir
     if (!user) {
       navigate('/login');
-    } else if (user.email_verified) {
+    } else if (user.is_verified) {
       navigate('/dashboard');
     }
   }, [user, navigate]);

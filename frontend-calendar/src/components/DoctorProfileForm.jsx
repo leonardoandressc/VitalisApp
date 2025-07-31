@@ -167,6 +167,7 @@ const DropdownItem = styled.div`
   padding: 0.75rem;
   cursor: pointer;
   border-bottom: 1px solid #f0f0f0;
+  color: #333;
   
   &:hover {
     background-color: #f8f9fa;
@@ -224,6 +225,10 @@ const DoctorProfileForm = ({ onComplete }) => {
   const [insuranceSearch, setInsuranceSearch] = useState('');
   const [specialtySearch, setSpecialtySearch] = useState('');
   const [showSpecialtyDropdown, setShowSpecialtyDropdown] = useState(false);
+  const [subSpecialtySearch, setSubSpecialtySearch] = useState('');
+  const [showSubSpecialtyDropdown, setShowSubSpecialtyDropdown] = useState(false);
+  const [clinicSearch, setClinicSearch] = useState('');
+  const [showClinicDropdown, setShowClinicDropdown] = useState(false);
   
   // Modal states
   const [showServiceModal, setShowServiceModal] = useState(false);
@@ -244,8 +249,29 @@ const DoctorProfileForm = ({ onComplete }) => {
     } else {
       setSubSpecialties([]);
       setFormData(prev => ({ ...prev, sub_specialty_id: '' }));
+      setSubSpecialtySearch('');
     }
   }, [formData.specialty_id, specialties]);
+
+  useEffect(() => {
+    // Actualizar el texto de búsqueda con la sub-especialidad seleccionada
+    const selectedSubSpecialty = subSpecialties.find(s => s.id === parseInt(formData.sub_specialty_id));
+    if (selectedSubSpecialty && subSpecialtySearch !== selectedSubSpecialty.name) {
+      setSubSpecialtySearch(selectedSubSpecialty.name);
+    } else if (!formData.sub_specialty_id) {
+      setSubSpecialtySearch('');
+    }
+  }, [formData.sub_specialty_id, subSpecialties]);
+
+  useEffect(() => {
+    // Actualizar el texto de búsqueda con la clínica seleccionada
+    const selectedClinic = clinics.find(c => c.id === parseInt(formData.clinic_id));
+    if (selectedClinic && clinicSearch !== selectedClinic.name) {
+      setClinicSearch(selectedClinic.name);
+    } else if (!formData.clinic_id) {
+      setClinicSearch('');
+    }
+  }, [formData.clinic_id, clinics]);
   
   const loadInitialData = async () => {
     try {
@@ -323,6 +349,135 @@ const DoctorProfileForm = ({ onComplete }) => {
     }
   };
 
+  // Funciones para sub-especialidades
+  const searchSubSpecialties = async (searchTerm, specialtyId) => {
+    try {
+      const response = await api.get(`/doctor-profile/sub-specialties?specialty_id=${specialtyId}&search=${encodeURIComponent(searchTerm)}&limit=10`);
+      setSubSpecialties(response.data.sub_specialties || []);
+    } catch (error) {
+      console.error('Error searching sub-specialties:', error);
+    }
+  };
+
+  const createNewSubSpecialty = async (name, specialtyId) => {
+    try {
+      const response = await api.post('/doctor-profile/sub-specialties', {
+        name: name.trim(),
+        specialty_id: specialtyId,
+        description: `Sub-especialidad creada por el usuario: ${name.trim()}`
+      });
+      
+      setSubSpecialties(prev => [response.data, ...prev]);
+      setFormData(prev => ({ ...prev, sub_specialty_id: response.data.id }));
+      setSubSpecialtySearch(response.data.name);
+      setShowSubSpecialtyDropdown(false);
+      
+      return response.data;
+    } catch (error) {
+      console.error('Error creating sub-specialty:', error);
+      throw error;
+    }
+  };
+
+  const handleSubSpecialtySearch = (value) => {
+    setSubSpecialtySearch(value);
+    setShowSubSpecialtyDropdown(true);
+    
+    if (value.trim().length > 0 && formData.specialty_id) {
+      searchSubSpecialties(value.trim(), formData.specialty_id);
+    } else if (formData.specialty_id) {
+      loadSubSpecialties(formData.specialty_id);
+    }
+  };
+
+  const handleSubSpecialtySelect = (subSpecialty) => {
+    setFormData(prev => ({ ...prev, sub_specialty_id: subSpecialty.id }));
+    setSubSpecialtySearch(subSpecialty.name);
+    setShowSubSpecialtyDropdown(false);
+  };
+
+  const handleCreateSubSpecialty = async () => {
+    if (subSpecialtySearch.trim().length === 0 || !formData.specialty_id) return;
+    
+    try {
+      await createNewSubSpecialty(subSpecialtySearch, formData.specialty_id);
+    } catch (error) {
+      alert('Error al crear la sub-especialidad. Por favor, inténtalo de nuevo.');
+    }
+  };
+
+  // Funciones para clínicas
+  const searchClinics = async (searchTerm) => {
+    try {
+      const response = await api.get(`/doctor-profile/clinics?search=${encodeURIComponent(searchTerm)}&limit=10`);
+      setClinics(response.data.clinics || []);
+    } catch (error) {
+      console.error('Error searching clinics:', error);
+    }
+  };
+
+  const createNewClinic = async (name) => {
+    try {
+      const response = await api.post('/doctor-profile/clinics', {
+        name: name.trim(),
+        address: '',
+        phone: '',
+        email: ''
+      });
+      
+      setClinics(prev => [response.data, ...prev]);
+      setFormData(prev => ({ ...prev, clinic_id: response.data.id }));
+      setClinicSearch(response.data.name);
+      setShowClinicDropdown(false);
+      
+      return response.data;
+    } catch (error) {
+      console.error('Error creating clinic:', error);
+      throw error;
+    }
+  };
+
+  const handleClinicSearch = (value) => {
+    setClinicSearch(value);
+    setShowClinicDropdown(true);
+    
+    if (value.trim().length > 0) {
+      searchClinics(value.trim());
+    } else {
+      loadInitialData();
+    }
+  };
+
+  const handleClinicSelect = (clinic) => {
+    setFormData(prev => ({ ...prev, clinic_id: clinic.id }));
+    setClinicSearch(clinic.name);
+    setShowClinicDropdown(false);
+  };
+
+  const handleCreateClinic = async () => {
+    if (clinicSearch.trim().length === 0) return;
+    
+    try {
+      await createNewClinic(clinicSearch);
+    } catch (error) {
+      alert('Error al crear la clínica. Por favor, inténtalo de nuevo.');
+    }
+  };
+
+  // Validación de teléfono
+  const validatePhone = (phone) => {
+    const phoneRegex = /^\d{10}$/;
+    return phoneRegex.test(phone.replace(/\s/g, ''));
+  };
+
+  const formatPhone = (phone) => {
+    const cleaned = phone.replace(/\D/g, '');
+    if (cleaned.length <= 10) {
+      return cleaned;
+    }
+    return cleaned.slice(0, 10);
+  };
+
   const loadSubSpecialties = async (specialtyId) => {
     try {
       const response = await api.get(`/doctor-profile/sub-specialties?specialty_id=${specialtyId}`);
@@ -333,7 +488,14 @@ const DoctorProfileForm = ({ onComplete }) => {
   };
   
   const handleInputChange = (field, value) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    let processedValue = value;
+    
+    // Formatear teléfono
+    if (field === 'phone') {
+      processedValue = formatPhone(value);
+    }
+    
+    setFormData(prev => ({ ...prev, [field]: processedValue }));
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: null }));
     }
@@ -378,6 +540,8 @@ const DoctorProfileForm = ({ onComplete }) => {
     
     if (!formData.phone.trim()) {
       newErrors.phone = 'El teléfono es obligatorio';
+    } else if (!validatePhone(formData.phone)) {
+      newErrors.phone = 'El teléfono debe tener exactamente 10 dígitos';
     }
     
     setErrors(newErrors);
@@ -544,18 +708,42 @@ const DoctorProfileForm = ({ onComplete }) => {
               
               <div style={{ flex: 1 }}>
                 <OptionalLabel>Sub-especialidad</OptionalLabel>
-                <Select
-                  value={formData.sub_specialty_id}
-                  onChange={(e) => handleInputChange('sub_specialty_id', e.target.value)}
-                  disabled={!formData.specialty_id}
-                >
-                  <option value="">Seleccionar sub-especialidad</option>
-                  {subSpecialties.map(subSpecialty => (
-                    <option key={subSpecialty.id} value={subSpecialty.id}>
-                      {subSpecialty.name}
-                    </option>
-                  ))}
-                </Select>
+                <DropdownContainer>
+                  <Input
+                    type="text"
+                    value={subSpecialtySearch}
+                    onChange={(e) => handleSubSpecialtySearch(e.target.value)}
+                    onFocus={() => setShowSubSpecialtyDropdown(true)}
+                    onBlur={() => {
+                      setTimeout(() => setShowSubSpecialtyDropdown(false), 200);
+                    }}
+                    placeholder="Buscar o escribir nueva sub-especialidad..."
+                    disabled={!formData.specialty_id}
+                  />
+                  {showSubSpecialtyDropdown && formData.specialty_id && (
+                    <DropdownList>
+                      {subSpecialties.length > 0 ? (
+                        subSpecialties.map(subSpecialty => (
+                          <DropdownItem
+                            key={subSpecialty.id}
+                            onClick={() => handleSubSpecialtySelect(subSpecialty)}
+                          >
+                            {subSpecialty.name}
+                          </DropdownItem>
+                        ))
+                      ) : (
+                        <DropdownItem style={{ color: '#666', fontStyle: 'italic' }}>
+                          No se encontraron sub-especialidades
+                        </DropdownItem>
+                      )}
+                      {subSpecialtySearch.trim() && !subSpecialties.find(s => s.name.toLowerCase() === subSpecialtySearch.toLowerCase()) && (
+                        <CreateButton onClick={handleCreateSubSpecialty}>
+                          + Crear "{subSpecialtySearch}"
+                        </CreateButton>
+                      )}
+                    </DropdownList>
+                  )}
+                </DropdownContainer>
               </div>
             </FormRow>
           </FormSection>
@@ -566,17 +754,41 @@ const DoctorProfileForm = ({ onComplete }) => {
             <FormGrid>
               <div>
                 <OptionalLabel>Clínica/Hospital</OptionalLabel>
-                <Select
-                  value={formData.clinic_id}
-                  onChange={(e) => handleInputChange('clinic_id', e.target.value)}
-                >
-                  <option value="">Seleccionar clínica</option>
-                  {clinics.map(clinic => (
-                    <option key={clinic.id} value={clinic.id}>
-                      {clinic.name}
-                    </option>
-                  ))}
-                </Select>
+                <DropdownContainer>
+                  <Input
+                    type="text"
+                    value={clinicSearch}
+                    onChange={(e) => handleClinicSearch(e.target.value)}
+                    onFocus={() => setShowClinicDropdown(true)}
+                    onBlur={() => {
+                      setTimeout(() => setShowClinicDropdown(false), 200);
+                    }}
+                    placeholder="Buscar o escribir nueva clínica..."
+                  />
+                  {showClinicDropdown && (
+                    <DropdownList>
+                      {clinics.length > 0 ? (
+                        clinics.map(clinic => (
+                          <DropdownItem
+                            key={clinic.id}
+                            onClick={() => handleClinicSelect(clinic)}
+                          >
+                            {clinic.name}
+                          </DropdownItem>
+                        ))
+                      ) : (
+                        <DropdownItem style={{ color: '#666', fontStyle: 'italic' }}>
+                          No se encontraron clínicas
+                        </DropdownItem>
+                      )}
+                      {clinicSearch.trim() && !clinics.find(c => c.name.toLowerCase() === clinicSearch.toLowerCase()) && (
+                        <CreateButton onClick={handleCreateClinic}>
+                          + Crear "{clinicSearch}"
+                        </CreateButton>
+                      )}
+                    </DropdownList>
+                  )}
+                </DropdownContainer>
               </div>
               
               <div>

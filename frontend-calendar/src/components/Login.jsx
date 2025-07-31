@@ -5,11 +5,12 @@ import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png"; // Ajusta la ruta si es diferente
 import { Link } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
+import { GoogleLogin } from '@react-oauth/google';
 
 function Login() {
   const theme = useTheme();
   const navigate = useNavigate();
-  const { login, user } = useAuth();
+  const { login, googleLogin, user } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
@@ -23,7 +24,24 @@ function Login() {
       setEmail(savedEmail);
       setRememberMe(true);
     }
-  }, []);
+  };
+
+  const handleGoogleSuccess = async (credentialResponse) => {
+    try {
+      setIsLoading(true);
+      await googleLogin(credentialResponse.credential);
+      navigate("/dashboard");
+    } catch (error) {
+      console.error("Error en Google Login:", error);
+      setError("Error al iniciar sesión con Google");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleGoogleError = () => {
+    setError("Error al iniciar sesión con Google");
+  };, []);
   
   // Redirigir si ya está autenticado
   useEffect(() => {
@@ -93,6 +111,33 @@ function Login() {
     }
   `;
 
+  const googleButtonStyle = css`
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  `;
+
+  const dividerStyle = css`
+    text-align: center;
+    margin: 1.5rem 0;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: ${theme.colors.inputBackground};
+    }
+    span {
+      background: ${theme.colors.cardBackground};
+      padding: 0 1rem;
+      color: ${theme.colors.textSecondary};
+      font-size: 0.9rem;
+    }
+  `;
+
   const footerText = css`
     margin-top: 1rem;
     font-size: 0.9rem;
@@ -122,7 +167,7 @@ function Login() {
       const result = await login(email, password, rememberMe);
       
       // Si el usuario no ha verificado su email, redirigir a verificación
-      if (result.user && !result.user.email_verified) {
+      if (result.user && !result.user.is_verified) {
         navigate("/verify-email");
       } else {
         // Si ya está verificado, ir al dashboard

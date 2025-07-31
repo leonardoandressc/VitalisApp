@@ -28,7 +28,7 @@ export default function ProtectedRoute({ children }) {
   }
   
   // Si el usuario no ha verificado su email, redirigir a verificación
-  if (!user.email_verified) {
+  if (!user.is_verified) {
     return <Navigate to="/verify-email" replace />;
   }
   
