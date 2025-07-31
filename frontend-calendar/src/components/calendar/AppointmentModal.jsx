@@ -70,8 +70,8 @@ const ModalTitle = styled.h2`
 const ModalContent = styled.div`
   display: flex;
   flex: 1;
-  overflow: auto;
-  padding: 1.5rem;
+  overflow: hidden;
+  min-height: 0;
   
   @media (max-width: 768px) {
     flex-direction: column;
@@ -80,24 +80,28 @@ const ModalContent = styled.div`
 
 const LeftSection = styled.div`
   flex: 1;
-  padding-right: 1.5rem;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
   border-right: 1px solid ${({ theme }) => theme.colors.border};
+  overflow-y: auto;
+  max-height: 100%;
   
   @media (max-width: 768px) {
-    padding-right: 0;
-    padding-bottom: 1.5rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
     border-right: none;
     border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+    max-height: 50vh;
   }
 `;
 
 const RightSection = styled.div`
   flex: 1;
-  padding-left: 1.5rem;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  overflow-y: auto;
+  max-height: 100%;
   
   @media (max-width: 768px) {
-    padding-left: 0;
-    padding-top: 1.5rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    max-height: 50vh;
   }
 `;
 
