@@ -7,7 +7,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from app.database import engine, Base
-from app.routers import users, calendars, appointments, availability_slots, availability, auth
+from app.routers import users, calendars, appointments, availability_slots, availability, auth, doctor_profile
 
 Base.metadata.create_all(bind=engine)
 
@@ -30,3 +30,4 @@ app.include_router(calendars.router)
 app.include_router(appointments.router)
 app.include_router(availability_slots.router)
 app.include_router(availability.router)
+app.include_router(doctor_profile.router)
