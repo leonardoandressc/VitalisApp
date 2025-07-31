@@ -1,14 +1,17 @@
 /** @jsxImportSource @emotion/react */
 import { useState } from "react";
 import { ThemeProvider, Global, css } from "@emotion/react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';import { lightTheme, darkTheme } from "./theme";
-import ThemeToggle from "./components/ThemeToggle";
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { lightTheme, darkTheme } from "./theme";
+import AuthProvider from './auth/AuthContext';
 import Login from "./components/Login";
-import Register from "./routes/Register"; // << nueva ruta
-import CalendarView from './routes/CalendarView';
+import Register from "./routes/Register";
+import EmailVerification from "./components/EmailVerification";
+import CalendarPage from './components/calendar/CalendarPage';
+import Dashboard from './components/Dashboard';
 import AppLayout from './components/layout/AppLayout';
+import ProtectedRoute from './routes/ProtectedRoute';
 
-/*
 function App() {
   const [isDark, setIsDark] = useState(true);
   const theme = isDark ? darkTheme : lightTheme;
@@ -30,31 +33,83 @@ function App() {
           }
         `}
       />
-      <ThemeToggle isDark={isDark} toggle={() => setIsDark(!isDark)} />
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
-    </ThemeProvider>
-  );
-}
-
-export default App;
-*/
-
-
-import CalendarPage from './components/calendar/CalendarPage';
-
-function App() {
-  return (
-      <AppLayout>
+      <AuthProvider>
         <Routes>
-          <Route path="/" element={<CalendarPage />} />
-          <Route path="/calendar" element={<CalendarPage />} />
-          <Route path="*" element={<CalendarPage />} />
-          {/* más rutas como DashboardPage, SettingsPage, etc. */}
+          {/* Rutas públicas */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/verify-email" element={<EmailVerification />} />
+          
+          {/* Rutas protegidas */}
+          <Route path="/" element={
+            <ProtectedRoute>
+              <AppLayout>
+                <Navigate to="/dashboard" replace />
+              </AppLayout>
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/dashboard" element={
+            <ProtectedRoute>
+              <AppLayout>
+                <Dashboard />
+              </AppLayout>
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/calendar" element={
+            <ProtectedRoute>
+              <AppLayout>
+                <CalendarPage />
+              </AppLayout>
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/patients" element={
+            <ProtectedRoute>
+              <AppLayout>
+                <div>Pacientes - En desarrollo</div>
+              </AppLayout>
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/medical-records" element={
+            <ProtectedRoute>
+              <AppLayout>
+                <div>Historiales Médicos - En desarrollo</div>
+              </AppLayout>
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/treatments" element={
+            <ProtectedRoute>
+              <AppLayout>
+                <div>Tratamientos - En desarrollo</div>
+              </AppLayout>
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/billing" element={
+            <ProtectedRoute>
+              <AppLayout>
+                <div>Facturación - En desarrollo</div>
+              </AppLayout>
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/settings" element={
+            <ProtectedRoute>
+              <AppLayout>
+                <div>Configuración - En desarrollo</div>
+              </AppLayout>
+            </ProtectedRoute>
+          } />
+          
+          {/* Ruta por defecto */}
+          <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
-      </AppLayout>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 

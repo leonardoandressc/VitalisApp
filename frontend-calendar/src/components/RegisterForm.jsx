@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "@emotion/styled";
-import { registerUser } from "../api/auth";
+import { useAuth } from "../auth/AuthContext";
 import logo from "../assets/logo.png";
 
 const Container = styled.div`
@@ -63,13 +64,17 @@ const ErrorMessage = styled.p`
 
 export default function RegisterForm() {
   const [form, setForm] = useState({
-    name: "",
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
 
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { register } = useAuth();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -83,17 +88,29 @@ export default function RegisterForm() {
       return;
     }
 
+    if (form.password.length < 8) {
+      setError("La contraseña debe tener al menos 8 caracteres.");
+      return;
+    }
+
     setError("");
+    setLoading(true);
 
     try {
-      await registerUser({
-        name: form.name,
+      const result = await register({
+        first_name: form.first_name,
+        last_name: form.last_name,
         email: form.email,
         password: form.password,
       });
-      // Redirección o mensaje aquí
+      
+      // Después del registro exitoso, redirigir a verificación de email
+      navigate("/verify-email");
     } catch (err) {
-      setError("Error al registrar. Intenta nuevamente.");
+      console.error("Error en registro:", err);
+      setError(err.response?.data?.error || "Error al registrar. Intenta nuevamente.");
+    } finally {
+      setLoading(false);
     }
   };
 

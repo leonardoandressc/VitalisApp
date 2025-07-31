@@ -119,8 +119,15 @@ function Login() {
         localStorage.removeItem("savedEmail");
       }
       
-      await login(email, password, rememberMe);
-      navigate("/calendar");
+      const result = await login(email, password, rememberMe);
+      
+      // Si el usuario no ha verificado su email, redirigir a verificación
+      if (result.user && !result.user.email_verified) {
+        navigate("/verify-email");
+      } else {
+        // Si ya está verificado, ir al dashboard
+        navigate("/dashboard");
+      }
     } catch (err) {
       console.error("Error de inicio de sesión:", err);
       setError("Correo o contraseña incorrectos");

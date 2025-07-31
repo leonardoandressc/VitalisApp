@@ -46,7 +46,39 @@ export default function AuthProvider({ children }) {
   };
 
   const register = async (payload) => {
-    await api.post("/auth/register", payload);
+    const { data } = await api.post("/auth/register", payload);
+    // Después del registro, automáticamente hacer login
+    if (data.access_token) {
+      saveSession(data);
+    }
+    return data;
+  };
+
+  const verifyEmail = async (verificationCode) => {
+    try {
+      const { data } = await api.post("/auth/verify-email/", {
+        verification_code: verificationCode
+      });
+      // Actualizar el usuario con el estado de verificación
+      if (data.user) {
+        setUser(data.user);
+        localStorage.setItem("user", JSON.stringify(data.user));
+      }
+      return data;
+    } catch (error) {
+      console.error("Error en verificación de email:", error);
+      throw error;
+    }
+  };
+
+  const resendVerificationCode = async () => {
+    try {
+      const { data } = await api.post("/auth/resend-verification/");
+      return data;
+    } catch (error) {
+      console.error("Error al reenviar código:", error);
+      throw error;
+    }
   };
 
   const refresh = async () => {
@@ -71,6 +103,17 @@ export default function AuthProvider({ children }) {
     delete api.defaults.headers.common.Authorization;
   };
 
-  const value = { user, access, loading, login, register, refresh, googleLogin, logout };
+  const value = { 
+    user, 
+    access, 
+    loading, 
+    login, 
+    register, 
+    refresh, 
+    googleLogin, 
+    logout, 
+    verifyEmail, 
+    resendVerificationCode 
+  };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
