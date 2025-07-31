@@ -1,4 +1,4 @@
-from database import SessionLocal
+from app.database import SessionLocal
 # Test de conexión a la base de datos
 try:
     db = SessionLocal()
