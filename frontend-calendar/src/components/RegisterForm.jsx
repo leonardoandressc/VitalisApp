@@ -50,9 +50,31 @@ const Button = styled.button`
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background: ${({ theme }) => theme.colors.secondary};
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+`;
+
+const LinkText = styled.p`
+  text-align: center;
+  margin-top: 1rem;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  
+  a {
+    color: ${({ theme }) => theme.colors.primary};
+    text-decoration: none;
+    font-weight: 600;
+    
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
@@ -120,11 +142,50 @@ export default function RegisterForm() {
         <Logo src={logo} alt="Logo" />
         <Title>Crear cuenta</Title>
         {error && <ErrorMessage>{error}</ErrorMessage>}
-        <Input name="name" placeholder="Nombre" onChange={handleChange} />
-        <Input name="email" placeholder="Correo" type="email" onChange={handleChange} />
-        <Input name="password" placeholder="Contraseña" type="password" onChange={handleChange} />
-        <Input name="confirmPassword" placeholder="Confirmar contraseña" type="password" onChange={handleChange} />
-        <Button type="submit">Registrarse</Button>
+        <Input 
+          name="first_name" 
+          placeholder="Nombre" 
+          value={form.first_name}
+          onChange={handleChange} 
+          required 
+        />
+        <Input 
+          name="last_name" 
+          placeholder="Apellido" 
+          value={form.last_name}
+          onChange={handleChange} 
+          required 
+        />
+        <Input 
+          name="email" 
+          placeholder="Correo electrónico" 
+          type="email" 
+          value={form.email}
+          onChange={handleChange} 
+          required 
+        />
+        <Input 
+          name="password" 
+          placeholder="Contraseña (mín. 8 caracteres)" 
+          type="password" 
+          value={form.password}
+          onChange={handleChange} 
+          required 
+        />
+        <Input 
+          name="confirmPassword" 
+          placeholder="Confirmar contraseña" 
+          type="password" 
+          value={form.confirmPassword}
+          onChange={handleChange} 
+          required 
+        />
+        <Button type="submit" disabled={loading}>
+          {loading ? 'Registrando...' : 'Registrarse'}
+        </Button>
+        <LinkText>
+          ¿Ya tienes cuenta? <a href="/login">Inicia sesión</a>
+        </LinkText>
       </Form>
     </Container>
   );

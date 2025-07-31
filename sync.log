@@ -23244,3 +23244,22 @@ After doing this, you may fix the identity used for this commit with:
 To https://github.com/leonardoandressc/VitalisApp.git
    9f1afc6..ecffbee  main -> main
 [Thu Jul 31 08:06:03 UTC 2025] Sincronizado con GitHub
+[main 4bf4286] Auto-commit: 2025-07-31 08:11:03
+ Committer: root <root@srv926145.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 8 files changed, 622 insertions(+), 48 deletions(-)
+ create mode 100644 frontend-calendar/src/components/EmailVerification.jsx
+To https://github.com/leonardoandressc/VitalisApp.git
+   ecffbee..4bf4286  main -> main
+[Thu Jul 31 08:11:04 UTC 2025] Sincronizado con GitHub
